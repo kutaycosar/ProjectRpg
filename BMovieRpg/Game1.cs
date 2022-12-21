@@ -10,7 +10,7 @@ namespace ProjectRpg
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private GameManager _gameManager;
-
+        
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
