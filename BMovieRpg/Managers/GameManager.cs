@@ -8,6 +8,10 @@ namespace ProjectRpg
     public class GameManager
     {
         private readonly Player _player;
+        private readonly Texture2D _playerDown;
+        private readonly Texture2D _playerUp;
+        private readonly Texture2D _playerLeft;
+        private readonly Texture2D _playerRight;
         private readonly GameObject _tree;
         private readonly GameObject _bush;
         public GameManager()
@@ -16,12 +20,12 @@ namespace ProjectRpg
             _tree = new GameObject(Globals.Content.Load<Texture2D>("tree"), 0, "tree", new Vector2(200, 200));
             _bush = new GameObject(Globals.Content.Load<Texture2D>("bush"), 0, "bush", new Vector2(500, 500));
 
-            GameObjectManager.AddGameObject(_player, _tree, _bush);
+            GameObjectManager.AddGameObject(_tree, _bush);
         }
 
         public void Update()
         {
-            InputManager.Update();
+            PlayerInputManager.Update();
             _player.Update();
         }
 

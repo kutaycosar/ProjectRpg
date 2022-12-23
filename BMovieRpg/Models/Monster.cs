@@ -8,6 +8,7 @@ namespace ProjectRpg
     {
         private int _speed;
         private bool _isMoving;
+        private Direction _direction;
         public Monster(Texture2D texture, float rotation, string tag, Vector2 position, int speed) : base(texture, rotation, tag, position)
         {
             _speed = speed;
@@ -20,6 +21,13 @@ namespace ProjectRpg
         }
 
         public bool IsMoving { get { return _isMoving; } set { _isMoving = value; } }
+
+        public Direction Direction { get { return _direction; } }
+
+        public void SetDirection(Direction direction)
+        {
+            _direction = direction;
+        }
 
         public void Move()
         {
