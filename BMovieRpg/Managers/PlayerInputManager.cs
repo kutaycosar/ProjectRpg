@@ -20,8 +20,8 @@ namespace ProjectRpg
             _direction = Direction.None;
             if (keyboardState.IsKeyDown(Keys.W)) _direction = Direction.Top;
             if (keyboardState.IsKeyDown(Keys.S)) _direction = Direction.Bottom;
-            if (keyboardState.IsKeyDown(Keys.A)) _direction = Direction.Right;
-            if (keyboardState.IsKeyDown(Keys.D)) _direction = Direction.Left;
+            if (keyboardState.IsKeyDown(Keys.A)) _direction = Direction.Left;
+            if (keyboardState.IsKeyDown(Keys.D)) _direction = Direction.Right;
 
         }
     }

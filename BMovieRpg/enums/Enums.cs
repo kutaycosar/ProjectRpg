@@ -5,10 +5,10 @@ namespace ProjectRpg
 {
     public enum Direction
     {
-        None = 0,
-        Top = 1,
-        Left = 2,
-        Bottom = 3,
-        Right = 4,
+        None = -1,
+        Top = 0,
+        Left = 1,
+        Bottom = 2,
+        Right = 3,
     }
 }

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="TextureAtlas.AnimatedSprite" Collapsed="true">
+  <Class Name="ProjectRpg.AnimatedSprite" Collapsed="true">
     <Position X="9.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAgAAAAkAAAAgAAAAAAAAAAAAAAAIAAAgAAAA=</HashCode>
@@ -72,10 +72,10 @@
       <FileName>Globals.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ProjectRpg.Managers.AnimationManager" Collapsed="true">
+  <Class Name="ProjectRpg.AnimationManager" Collapsed="true">
     <Position X="11.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAwAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAwAAAAAAAAAAAAAAAAAAEABAAAAAAAAAAAAAAAgAAA=</HashCode>
       <FileName>Managers\AnimationManager.cs</FileName>
     </TypeIdentifier>
   </Class>

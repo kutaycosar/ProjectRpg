@@ -5,14 +5,14 @@ using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
-namespace TextureAtlas
+namespace ProjectRpg
 {
     public class AnimatedSprite
     {
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
-        private int currentFrame;
+        public int currentFrame;
         private int totalFrames;
 
         public AnimatedSprite(Texture2D texture, int rows, int columns)
@@ -41,9 +41,9 @@ namespace TextureAtlas
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
 
-            spriteBatch.Begin();
+            //spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
+            //spriteBatch.End();
         }
     }
 }

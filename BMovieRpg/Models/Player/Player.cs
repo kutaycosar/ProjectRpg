@@ -3,8 +3,6 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
-using ProjectRpg.Managers;
-using TextureAtlas;
 
 namespace ProjectRpg
 {
@@ -31,9 +29,9 @@ namespace ProjectRpg
                 Vector2 dir = PlayerInputManager.Direction switch
                 {
                     Direction.Top => new Vector2(0, -1),
-                    Direction.Left => new Vector2(1, 0),
+                    Direction.Left => new Vector2(-1, 0),
                     Direction.Bottom => new Vector2(0, 1),
-                    Direction.Right => new Vector2(-1, 0),
+                    Direction.Right => new Vector2(+1, 0),
                 };
                 Position += dir * Speed * Globals.TotalSeconds;
             }

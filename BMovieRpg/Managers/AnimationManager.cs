@@ -1,27 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TextureAtlas;
 
-namespace ProjectRpg.Managers
+namespace ProjectRpg
 {
     public class AnimationManager
     {
         private AnimatedSprite _currentAnim;
-        private AnimatedSprite[] _animations;
+        public AnimatedSprite[] _animations;
 
         public AnimationManager(AnimatedSprite[] animations)
         {
             _animations = animations;
         }
 
-        public AnimatedSprite Speed { get { return _currentAnim; } set { _currentAnim = value; } }
-
-        public void Update(GameObject gameObject)
+        public AnimatedSprite CurrentAnim { get { return _currentAnim; } set { _currentAnim = value; } }
+        public void SetAnimation(int index, AnimatedSprite animatedSprite)
         {
+            _animations[index] = animatedSprite;
+        }
 
+        public void Update()
+        {
+            if (PlayerInputManager.Direction != Direction.None)
+            {
+                _currentAnim = _animations[(int)PlayerInputManager.Direction];
+
+
+            }
+            else
+            {
+                _currentAnim = _animations[0];
+            }
+            
         }
 
         //public AnimatedSprite CurrentAnim()
