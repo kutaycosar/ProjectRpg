@@ -16,8 +16,8 @@ namespace ProjectRpg
         private readonly Texture2D _playerRight;
         private readonly GameObject _tree;
         private readonly GameObject _bush;
-
-        public GameManager()
+        
+        public GameManager()//TODO: Buradaki yuklemeleri game1.cs de content.load da yukklenecek sekilde ayarla
         {
             _playerDown = Globals.Content.Load<Texture2D>("playerDown");
             _playerUp = Globals.Content.Load<Texture2D>("playerUp");

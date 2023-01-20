@@ -37,10 +37,10 @@ namespace ProjectRpg
             }
             else
             {
-                _currentAnim = _animations[0];
+                _currentAnim = _animations[2];
             }
             
-            if(_animationSpeed < _elapsedTime)
+            if(_animationSpeed < _elapsedTime && PlayerInputManager.Direction != Direction.None)
             {
                 _currentAnim.Update();
                 _elapsedTime = 0f;

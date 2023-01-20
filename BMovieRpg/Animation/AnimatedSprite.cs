@@ -12,7 +12,7 @@ namespace ProjectRpg
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
-        public int currentFrame;
+        private int currentFrame;
         private int totalFrames;
 
         public AnimatedSprite(Texture2D texture, int rows, int columns)
@@ -29,6 +29,7 @@ namespace ProjectRpg
             currentFrame++;
             if (currentFrame == totalFrames)
                 currentFrame = 0;
+
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
