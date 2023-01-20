@@ -10,7 +10,9 @@ namespace ProjectRpg
     public class AnimationManager
     {
         private AnimatedSprite _currentAnim;
-        public AnimatedSprite[] _animations;
+        private AnimatedSprite[] _animations;
+        private float _animationSpeed = 0.1f;
+        private float _elapsedTime;
 
         public AnimationManager(AnimatedSprite[] animations)
         {
@@ -25,6 +27,8 @@ namespace ProjectRpg
 
         public void Update()
         {
+            _elapsedTime += Globals.TotalSeconds;
+
             if (PlayerInputManager.Direction != Direction.None)
             {
                 _currentAnim = _animations[(int)PlayerInputManager.Direction];
@@ -34,6 +38,12 @@ namespace ProjectRpg
             else
             {
                 _currentAnim = _animations[0];
+            }
+            
+            if(_animationSpeed < _elapsedTime)
+            {
+                _currentAnim.Update();
+                _elapsedTime = 0f;
             }
             
         }

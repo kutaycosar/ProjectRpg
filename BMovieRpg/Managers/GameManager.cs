@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System;
 
 namespace ProjectRpg
 {
@@ -15,6 +16,7 @@ namespace ProjectRpg
         private readonly Texture2D _playerRight;
         private readonly GameObject _tree;
         private readonly GameObject _bush;
+
         public GameManager()
         {
             _playerDown = Globals.Content.Load<Texture2D>("playerDown");
@@ -39,17 +41,14 @@ namespace ProjectRpg
         public void Update()
         {
             PlayerInputManager.Update();
-            _player.AnimationManager.Update();
-            _player.AnimationManager.CurrentAnim.Update();
             _player.Update();
+            Debug.WriteLine(Globals.TotalSeconds);
         }
 
         public void Draw()
         {
             
             _player.AnimationManager.CurrentAnim.Draw(Globals.SpriteBatch, _player.Position);
-            Debug.WriteLine("current frame" + _player.AnimationManager.CurrentAnim.currentFrame);
-            Debug.WriteLine("current animation" + _player.AnimationManager.CurrentAnim.currentFrame);
 
             foreach (GameObject gameObject in GameObjectManager.GetGameObjects())
             {

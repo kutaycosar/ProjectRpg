@@ -44,6 +44,7 @@ namespace ProjectRpg
 
         public void Update()
         {
+            AnimationManager.Update();
             Move();
         }
 
