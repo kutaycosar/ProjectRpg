@@ -25,7 +25,7 @@ namespace ProjectRpg
             _animations[index] = animatedSprite;
         }
 
-        public void Update()
+        public void Update()//TODO: animation should reset when player stops.
         {
             _elapsedTime += Globals.TotalSeconds;
 

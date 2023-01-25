@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace ProjectRpg
 {
@@ -10,11 +11,14 @@ namespace ProjectRpg
     {
         private int _speed;
         private bool _isMoving;
+        private Vector2 _lastPosition;
         public AnimationManager AnimationManager { get; set; }
         public Player(Texture2D texture, float rotation, string tag, Vector2 position, int speed) : base(texture, rotation, tag, position)
         {
+            _isMoving = true;
             _speed = speed;
             AnimationManager = new AnimationManager(new AnimatedSprite[4]);
+            _lastPosition = position;
         }
 
         public int Speed {get { return _speed; }set { _speed = value; }}
@@ -33,18 +37,42 @@ namespace ProjectRpg
                     Direction.Bottom => new Vector2(0, 1),
                     Direction.Right => new Vector2(+1, 0),
                 };
-                Position += dir * Speed * Globals.TotalSeconds;
+                if(_isMoving == true)
+                {
+                    _lastPosition = Position;
+                    Position += dir * Speed * Globals.TotalSeconds;
+                }
+                
             }
         }
 
-        public void OnCollision(GameObject other)
+        public void OnCollision(List<GameObject> gameObjects)
         {
-            throw new NotImplementedException();
+            foreach (GameObject gObj in gameObjects) //TODO: distance i center positionu baz alarak yap
+            {
+                float distance = Vector2.Distance(new Vector2(Position.X - this.GetTexture.Width / 2, Position.Y - this.GetTexture.Height / 2), 
+                    new Vector2(gObj.Position.X - gObj.GetTexture.Width / 2, gObj.Position.Y - GetTexture.Height));
+
+                float combinedRadius = this.GetRadius + gObj.GetRadius;
+
+                if (distance < combinedRadius)
+                {
+                    _isMoving = false;
+                    Position = _lastPosition;
+                }
+                else
+                {
+                    _isMoving = true;
+                }
+            }
         }
 
         public void Update()
         {
+            OnCollision(GameObjectManager.GetGameObjects());
+
             AnimationManager.Update();
+
             Move();
         }
 

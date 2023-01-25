@@ -18,7 +18,7 @@ namespace ProjectRpg
 
     public interface ICollidable
     {
-        void OnCollision(GameObject other);
+        void OnCollision(List<GameObject> gameObjects);
     }
 
     public interface IAnimated

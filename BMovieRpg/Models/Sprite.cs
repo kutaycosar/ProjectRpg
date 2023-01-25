@@ -18,6 +18,10 @@ namespace ProjectRpg
             
             _origin = new(texture.Width / 2, texture.Height / 2);
         }
+        public Texture2D GetTexture
+        {
+            get { return _texture; }
+        }
 
         public float Rotation
         {

@@ -32,8 +32,8 @@ namespace ProjectRpg
             _player.AnimationManager.SetAnimation(2, new AnimatedSprite(_playerDown, 1, 4));
             _player.AnimationManager.SetAnimation(3, new AnimatedSprite(_playerRight, 1, 4));
 
-            _tree = new GameObject(Globals.Content.Load<Texture2D>("tree"), 0, "tree", new Vector2(200, 200));
-            _bush = new GameObject(Globals.Content.Load<Texture2D>("bush"), 0, "bush", new Vector2(500, 500));
+            _tree = new GameObject(Globals.Content.Load<Texture2D>("tree"), 0, "tree", new Vector2(600, 600));
+            _bush = new GameObject(Globals.Content.Load<Texture2D>("bush"), 0, "bush", new Vector2(300, 300));
 
             GameObjectManager.AddGameObject(_tree, _bush);
         }
@@ -44,7 +44,7 @@ namespace ProjectRpg
             _player.Update();
             Debug.WriteLine(Globals.TotalSeconds);
         }
-
+        
         public void Draw()
         {
             
