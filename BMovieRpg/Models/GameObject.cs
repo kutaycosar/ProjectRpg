@@ -1,23 +1,23 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-
+using System;
 
 namespace ProjectRpg
 {
     public class GameObject : Sprite//TODO: not every game object is collidable so think about making new class for collidable objects(obstacles?)
     {
-        private string _tag;
-        private Vector2 _position;
-        private float _radius; // TODO: Radius u center position u baz alarak dene
+        protected string _tag;
+        protected Vector2 _position;
+        protected float _radius;
+        protected Vector2 _hitPosBox;
 
-        public GameObject(Texture2D texture, float rotation, string tag, Vector2 position) : base(texture, rotation)
+        public GameObject(Texture2D texture, float radius, string tag, Vector2 position, Vector2 hitPosBox) : base(texture)
         {
             _tag = tag;
             _position = position;
-            _radius = (this._texture.Width + this._texture.Height) / 4f;
-
-
+            _radius = radius;
+            _hitPosBox = hitPosBox;
         }
 
         public string Tag
@@ -30,14 +30,20 @@ namespace ProjectRpg
             set { _position = value; }
         }
 
-        public float GetRadius
+        public float Radius
         {
             get { return _radius; }
         }
 
+        public Vector2 HitPosBox
+        {
+            get { return _hitPosBox; }
+            set { _hitPosBox = value; }
+        }
+
         public virtual void Draw()
         {
-            Globals.SpriteBatch.Draw(_texture, Position, null, Color.White, Rotation, _origin, 1, SpriteEffects.None, 1);
+            Globals.SpriteBatch.Draw(_texture, Position,Color.White);
         }
     }
 }

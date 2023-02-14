@@ -7,23 +7,31 @@ using System.Diagnostics;
 
 namespace ProjectRpg
 {
-    public class Player : GameObject,IAnimated, IMovable, ICollidable
+    public class Player : GameObject, IAnimated, IMovable, ICollidable
     {
-        private int _speed;
-        private bool _isMoving;
-        private Vector2 _lastPosition;
+        protected int _speed;
+        protected bool _isMoving;
+        protected Vector2 _lastPosition;
         public AnimationManager AnimationManager { get; set; }
-        public Player(Texture2D texture, float rotation, string tag, Vector2 position, int speed) : base(texture, rotation, tag, position)
+
+        public Player(Texture2D texture, string tag, Vector2 position) : 
+            base(texture, 0, tag, position, Vector2.Zero)
         {
             _isMoving = true;
-            _speed = speed;
+            _speed = 200;
+            _radius = 56;
             AnimationManager = new AnimationManager(new AnimatedSprite[4]);
             _lastPosition = position;
+            _hitPosBox = new Vector2(Position.X + 29, Position.Y + 31);
+            
         }
 
         public int Speed {get { return _speed; }set { _speed = value; }}
 
         public bool IsMoving { get { return IsMoving; } set { _isMoving = value; } }
+
+        public Vector2 LastPosition {get { return _lastPosition; }}
+        
 
         public void Move()
         {
@@ -50,10 +58,9 @@ namespace ProjectRpg
         {
             foreach (GameObject gObj in gameObjects) //TODO: distance i center positionu baz alarak yap
             {
-                float distance = Vector2.Distance(new Vector2(Position.X - this.GetTexture.Width / 2, Position.Y - this.GetTexture.Height / 2), 
-                    new Vector2(gObj.Position.X - gObj.GetTexture.Width / 2, gObj.Position.Y - GetTexture.Height));
+                float distance = Vector2.Distance(this.Position, gObj.HitPosBox);
 
-                float combinedRadius = this.GetRadius + gObj.GetRadius;
+                float combinedRadius = this.Radius + gObj.Radius;
 
                 if (distance < combinedRadius)
                 {
@@ -72,6 +79,7 @@ namespace ProjectRpg
             OnCollision(GameObjectManager.GetGameObjects());
 
             AnimationManager.Update();
+            HitPosBox = new Vector2(Position.X + 29, Position.Y + 31);
 
             Move();
         }

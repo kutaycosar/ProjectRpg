@@ -14,8 +14,8 @@ namespace ProjectRpg
         private readonly Texture2D _playerUp;
         private readonly Texture2D _playerLeft;
         private readonly Texture2D _playerRight;
-        private readonly GameObject _tree;
-        private readonly GameObject _bush;
+        private readonly Tree _tree;
+        private readonly Bush _bush;
         
         public GameManager()//TODO: Buradaki yuklemeleri game1.cs de content.load da yukklenecek sekilde ayarla
         {
@@ -25,15 +25,17 @@ namespace ProjectRpg
             _playerRight = Globals.Content.Load<Texture2D>("playerRight");
 
 
-            _player = new Player(Globals.Content.Load<Texture2D>("player"), 0, "player", new Vector2(50,50), 200);
+            //_player = new Player(Globals.Content.Load<Texture2D>("player"), 0, "player", new Vector2(50, 50), 200);
+            _player = new Player(Globals.Content.Load<Texture2D>("player"), "player", new Vector2(50, 50));
+
 
             _player.AnimationManager.SetAnimation(0, new AnimatedSprite(_playerUp, 1, 4));
             _player.AnimationManager.SetAnimation(1, new AnimatedSprite(_playerLeft, 1, 4));
             _player.AnimationManager.SetAnimation(2, new AnimatedSprite(_playerDown, 1, 4));
             _player.AnimationManager.SetAnimation(3, new AnimatedSprite(_playerRight, 1, 4));
 
-            _tree = new GameObject(Globals.Content.Load<Texture2D>("tree"), 0, "tree", new Vector2(600, 600));
-            _bush = new GameObject(Globals.Content.Load<Texture2D>("bush"), 0, "bush", new Vector2(300, 300));
+            _tree = new Tree(Globals.Content.Load<Texture2D>("tree"), "tree", new Vector2(600, 600));
+            _bush = new Bush(Globals.Content.Load<Texture2D>("bush"), "bush", new Vector2(300, 300));
 
             GameObjectManager.AddGameObject(_tree, _bush);
         }
@@ -43,6 +45,8 @@ namespace ProjectRpg
             PlayerInputManager.Update();
             _player.Update();
             Debug.WriteLine(Globals.TotalSeconds);
+            Debug.Write("hitposx: " + _player.HitPosBox.X);
+            Debug.Write("hitposy: " + _player.HitPosBox.Y);
         }
         
         public void Draw()

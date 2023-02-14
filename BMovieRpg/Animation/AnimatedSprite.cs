@@ -29,7 +29,6 @@ namespace ProjectRpg
             currentFrame++;
             if (currentFrame == totalFrames)
                 currentFrame = 0;
-
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

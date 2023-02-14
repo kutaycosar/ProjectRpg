@@ -6,10 +6,10 @@ namespace ProjectRpg
 {
     public class Monster : GameObject, IMovable
     {
-        private int _speed;
-        private bool _isMoving;
-        private Direction _direction;
-        public Monster(Texture2D texture, float rotation, string tag, Vector2 position, int speed) : base(texture, rotation, tag, position)
+        protected int _speed;
+        protected bool _isMoving;
+        protected Direction _direction;
+        public Monster(Texture2D texture, float rotation, string tag, Vector2 position, int speed) : base(texture, rotation, tag, position, Vector2.Zero)
         {
             _speed = speed;
         }

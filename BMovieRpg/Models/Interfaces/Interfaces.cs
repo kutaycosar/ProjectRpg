@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace ProjectRpg
 
     public interface ICollidable
     {
+        Vector2 LastPosition { get;}
         void OnCollision(List<GameObject> gameObjects);
     }
 
