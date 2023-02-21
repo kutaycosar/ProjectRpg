@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using ProjectRpg.Managers;
 
 namespace ProjectRpg
 {
@@ -54,29 +55,17 @@ namespace ProjectRpg
             }
         }
 
-        public void OnCollision(List<GameObject> gameObjects)
+        public void OnCollision()
         {
-            foreach (GameObject gObj in gameObjects) //TODO: distance i center positionu baz alarak yap
-            {
-                float distance = Vector2.Distance(this.Position, gObj.HitPosBox);
-
-                float combinedRadius = this.Radius + gObj.Radius;
-
-                if (distance < combinedRadius)
-                {
-                    _isMoving = false;
-                    Position = _lastPosition;
-                }
-                else
-                {
-                    _isMoving = true;
-                }
-            }
-        }
+            _isMoving = CollisionManager.DidCollide(this);
+            if (!_isMoving) this.Position = LastPosition;  
+        } 
+        
 
         public void Update()
         {
-            OnCollision(GameObjectManager.GetGameObjects());
+            OnCollision();
+
 
             AnimationManager.Update();
             HitPosBox = new Vector2(Position.X + 29, Position.Y + 31);

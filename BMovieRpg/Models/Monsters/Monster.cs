@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework;
 
 
-namespace ProjectRpg
+namespace ProjectRpg.Models.Monsters
 {
     public class Monster : GameObject, IMovable
     {
@@ -14,8 +14,8 @@ namespace ProjectRpg
             _speed = speed;
         }
 
-        public int Speed 
-        { 
+        public int Speed
+        {
             get { return _speed; }
             set { _speed = value; }
         }
@@ -31,7 +31,7 @@ namespace ProjectRpg
 
         public void Move()
         {
-            
+
         }
 
         public void Update()

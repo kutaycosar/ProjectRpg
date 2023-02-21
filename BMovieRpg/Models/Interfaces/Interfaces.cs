@@ -20,7 +20,7 @@ namespace ProjectRpg
     public interface ICollidable
     {
         Vector2 LastPosition { get;}
-        void OnCollision(List<GameObject> gameObjects);
+        void OnCollision();
     }
 
     public interface IAnimated

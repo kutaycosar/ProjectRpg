@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System;
+using ProjectRpg.Models.Obstacles;
 
 namespace ProjectRpg
 {

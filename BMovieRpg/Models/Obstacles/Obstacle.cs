@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ProjectRpg
+namespace ProjectRpg.Models.Obstacles
 {
     public class Obstacle : GameObject
     {
@@ -17,7 +17,7 @@ namespace ProjectRpg
 
     public class Tree : Obstacle
     {
-        public Tree(Texture2D texture, string tag, Vector2 position ) : base(texture, 0, tag, position, Vector2.Zero)
+        public Tree(Texture2D texture, string tag, Vector2 position) : base(texture, 0, tag, position, Vector2.Zero)
         {
             _radius = 18;
             _hitPosBox = new Vector2(Position.X + 15, Position.Y + 100);
