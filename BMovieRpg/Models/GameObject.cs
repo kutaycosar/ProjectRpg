@@ -45,5 +45,6 @@ namespace ProjectRpg
         {
             Globals.SpriteBatch.Draw(_texture, Position,Color.White);
         }
+
     }
 }

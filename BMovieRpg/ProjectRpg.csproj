@@ -11,6 +11,17 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Models\Monsters\**" />
+    <Compile Remove="Models\Npc\**" />
+    <Compile Remove="Models\Player\**" />
+    <EmbeddedResource Remove="Models\Monsters\**" />
+    <EmbeddedResource Remove="Models\Npc\**" />
+    <EmbeddedResource Remove="Models\Player\**" />
+    <None Remove="Models\Monsters\**" />
+    <None Remove="Models\Npc\**" />
+    <None Remove="Models\Player\**" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove="Icon.ico" />
     <None Remove="Icon.bmp" />
   </ItemGroup>

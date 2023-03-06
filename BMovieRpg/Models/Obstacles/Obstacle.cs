@@ -35,35 +35,3 @@ namespace ProjectRpg.Models.Obstacles
         }
     }
 }
-//TODO : didcollide i static class yapmayi dusun
-/*
-    tree radius 20;
-    bush radius 56;
-
-    tree hitBoxPos = new Vector2(pos.x + 64, pos.y + 86) we adding half of the widh and height to position to find center 
-    bush hitboxpos = new Vector2(pos.x + 56, pos.y + 57)
-    
-
-    //private variable can only be accessed with baseclass protecteds can be accessible form both base and derived classes
-    
-    public static bool didCollide(Vector2 otherPos, int otherRad
-    {
-        foreach(Obstacle o in Obstacle.obstacles)
-    {
-        int sum = o.Radius + otherRad;
-        if(Vector2.Distance(o.HitBoxPos, otherPos) < sum)
-        {
-            return true;
-        }
-        return false;
-
-   }
-
-    
-
-
-
-
-
-
-*/

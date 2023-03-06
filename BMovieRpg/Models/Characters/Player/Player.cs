@@ -1,19 +1,12 @@
-﻿using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using ProjectRpg.Managers;
 
-namespace ProjectRpg
+
+namespace ProjectRpg.Models.Characters
 {
-    public class Player : GameObject, IAnimated, IMovable, ICollidable
+    public sealed class Player : Character, IAnimated, IMovable, ICollidable
     {
-        protected int _speed;
-        protected bool _isMoving;
-        protected Vector2 _lastPosition;
-        public AnimationManager AnimationManager { get; set; }
 
         public Player(Texture2D texture, string tag, Vector2 position) : 
             base(texture, 0, tag, position, Vector2.Zero)
@@ -27,14 +20,7 @@ namespace ProjectRpg
             
         }
 
-        public int Speed {get { return _speed; }set { _speed = value; }}
-
-        public bool IsMoving { get { return IsMoving; } set { _isMoving = value; } }
-
-        public Vector2 LastPosition {get { return _lastPosition; }}
-        
-
-        public void Move()
+        public override void Move() //TODO: bunu monsterlarin da kullanabilecegi sekilde ayarla
         {
             if (PlayerInputManager.Direction != Direction.None)
             {
@@ -55,14 +41,14 @@ namespace ProjectRpg
             }
         }
 
-        public void OnCollision()
+        public override void OnCollision()
         {
             _isMoving = CollisionManager.DidCollide(this);
             if (!_isMoving) this.Position = LastPosition;  
         } 
         
 
-        public void Update()
+        public override void Update()
         {
             OnCollision();
 
