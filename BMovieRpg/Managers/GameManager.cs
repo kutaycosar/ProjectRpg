@@ -1,11 +1,9 @@
 ﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System;
 using ProjectRpg.Models.Obstacles;
 using ProjectRpg.Models.Characters;
+using ProjectRpg.Models.Characters.Monsters;
 
 namespace ProjectRpg
 {
@@ -26,13 +24,15 @@ namespace ProjectRpg
             initEnemies();
         }
 
-        public void Update()
+        public void Update(GameTime gameTime)
         {
 
             PlayerInputManager.Update();
             _player.Update();
             _snake.Update();
-            
+
+            Globals.Update(gameTime);
+
         }
         
         public void Draw()
@@ -66,7 +66,8 @@ namespace ProjectRpg
 
         public void initEnemies()
         {
-            _snake = new Monster(Globals.Content.Load<Texture2D>("snakeEnemy"), "snake", new Vector2(400, 400));
+            //_snake = new Monster(Globals.Content.Load<Texture2D>("snakeEnemy"), "snake", new Vector2(400, 400));
+            _snake = new Snake(Globals.Content.Load<Texture2D>("snakeEnemy"), "snake", new Vector2(400, 400));
 
             GameObjectManager.AddGameObject(_snake);
         }

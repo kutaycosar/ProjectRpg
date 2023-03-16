@@ -20,4 +20,9 @@ namespace ProjectRpg
     {
         public AnimationManager AnimationManager { get; set; }
     }
+
+    public interface IHasName
+    {
+        public string Name { get; set; }
+    }
 }

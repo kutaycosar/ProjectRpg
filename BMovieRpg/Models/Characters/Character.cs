@@ -8,9 +8,14 @@ namespace ProjectRpg.Models.Characters
         protected int _speed;
         protected bool _isMoving;
         protected Vector2 _lastPosition;
-        public Character(Texture2D texture, float radius, string tag, Vector2 position, Vector2 hitPosBox) : 
+        public Character(Texture2D texture, float radius, string tag, Vector2 position, Vector2 hitPosBox,
+            int speed) : 
             base(texture, radius, tag, position, hitPosBox)
         {
+            _speed = speed;
+            _isMoving = true;
+            _lastPosition = Position;
+
         }
 
         public int Speed { get { return _speed; } set { _speed = value; } }

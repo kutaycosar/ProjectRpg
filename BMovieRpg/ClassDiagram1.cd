@@ -81,9 +81,10 @@
   <Class Name="ProjectRpg.Models.Characters.Npc" Collapsed="true">
     <Position X="2" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Characters\Npcs\Npc.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ProjectRpg.Models.Characters.Player" Collapsed="true">
     <Position X="4.25" Y="4.75" Width="1.5" />
@@ -122,6 +123,14 @@
       <FileName>Models\Obstacles\Obstacle.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="ProjectRpg.Models.Characters.Monsters.Snake" Collapsed="true">
+    <Position X="6.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Characters\Monsters\Snake.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
   <Interface Name="ProjectRpg.IMovable" Collapsed="true">
     <Position X="17" Y="3.75" Width="1.5" />
     <TypeIdentifier>
@@ -130,14 +139,14 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="ProjectRpg.ICollidable" Collapsed="true">
-    <Position X="15.25" Y="3.75" Width="1.5" />
+    <Position X="13.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
       <FileName>Models\Interfaces\Interfaces.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="ProjectRpg.IAnimated" Collapsed="true">
-    <Position X="13.5" Y="3.75" Width="1.5" />
+    <Position X="15.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Interfaces\Interfaces.cs</FileName>

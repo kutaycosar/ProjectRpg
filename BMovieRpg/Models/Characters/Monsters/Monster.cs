@@ -9,10 +9,10 @@ namespace ProjectRpg.Models.Characters
     {
         protected Direction _direction;
         
-        public Monster(Texture2D texture, string tag, Vector2 position) : base(texture, 0, tag, position, Vector2.Zero)
+        public Monster(Texture2D texture, string tag, Vector2 position, int speed)
+            : base(texture, 0, tag, position, Vector2.Zero, speed)
         {
-            _isMoving = true;
-            _speed = 200;
+            _direction = Direction.None;
             _radius = 56;
             _hitPosBox = new Vector2(Position.X + 29, Position.Y + 31);
 

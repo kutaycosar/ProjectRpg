@@ -45,10 +45,8 @@ namespace ProjectRpg
                 Exit();
 
             // TODO: Add your update logic here
-            Globals.Update(gameTime);
-            _gameManager.Update();
-
-            base.Update(gameTime);
+            
+            _gameManager.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
@@ -63,7 +61,6 @@ namespace ProjectRpg
 
             _spriteBatch.End();
 
-            base.Draw(gameTime);
         }
     }
 }

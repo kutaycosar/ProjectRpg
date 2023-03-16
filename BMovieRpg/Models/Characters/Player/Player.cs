@@ -9,9 +9,8 @@ namespace ProjectRpg.Models.Characters
     {
 
         public Player(Texture2D texture, string tag, Vector2 position) : 
-            base(texture, 0, tag, position, Vector2.Zero)
+            base(texture, 0, tag, position, Vector2.Zero, 0)
         {
-            _isMoving = true;
             _speed = 200;
             _radius = 56;
             AnimationManager = new AnimationManager(new AnimatedSprite[4]);
