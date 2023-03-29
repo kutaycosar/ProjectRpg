@@ -7,15 +7,15 @@ namespace ProjectRpg
 {
     public class Sprite
     {
-        protected readonly Texture2D _texture;
+        protected readonly Texture2D texture;
         
         public Sprite(Texture2D texture)
         {
-            _texture = texture;
+            this.texture = texture;
         }
         public Texture2D GetTexture
         {
-            get { return _texture; }
+            get { return this.texture; }
         }
         
     }

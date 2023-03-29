@@ -5,18 +5,16 @@ using ProjectRpg.Managers;
 
 namespace ProjectRpg.Models.Characters
 {
-    public sealed class Player : Character, IAnimated, IMovable, ICollidable
+    public sealed class Player : Person
     {
-
-        public Player(Texture2D texture, string tag, Vector2 position) : 
-            base(texture, 0, tag, position, Vector2.Zero, 0)
+        public Player(string name, Texture2D texture, string tag, Vector2 position) : 
+            base(name,texture,tag, position)
         {
-            _speed = 200;
-            _radius = 56;
-            AnimationManager = new AnimationManager(new AnimatedSprite[4]);
-            _lastPosition = position;
-            _hitPosBox = new Vector2(Position.X + 29, Position.Y + 31);
-            
+            this.moveData.Speed = 200;
+            this.physcData.Radius = 56;
+            this.physcData.HitBoxPos = new Vector2(Position.X + 29, Position.Y + 31);
+
+            this.animationManager = new AnimationManager(new AnimatedSprite[4]);
         }
 
         public override void Move() //TODO: bunu monsterlarin da kullanabilecegi sekilde ayarla
@@ -31,9 +29,9 @@ namespace ProjectRpg.Models.Characters
                     Direction.Bottom => new Vector2(0, 1),
                     Direction.Right => new Vector2(+1, 0),
                 };
-                if(_isMoving == true)
+                if(IsMoving == true)
                 {
-                    _lastPosition = Position;
+                    LastPos = Position;
                     Position += dir * Speed * Globals.TotalSeconds;
                 }
                 
@@ -42,22 +40,18 @@ namespace ProjectRpg.Models.Characters
 
         public override void OnCollision()
         {
-            _isMoving = CollisionManager.DidCollide(this);
-            if (!_isMoving) this.Position = LastPosition;  
+            IsMoving = CollisionManager.DidCollide(this);
+            if (!IsMoving) this.Position = LastPos;  
         } 
-        
 
         public override void Update()
         {
             OnCollision();
 
-
             AnimationManager.Update();
-            HitPosBox = new Vector2(Position.X + 29, Position.Y + 31);
+            HitBoxPos = new Vector2(Position.X + 29, Position.Y + 31);
 
             Move();
         }
-
-       
     }
 }

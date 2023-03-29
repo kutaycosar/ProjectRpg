@@ -14,6 +14,9 @@ namespace ProjectRpg
         public static float TotalSeconds { get; set; }
         public static ContentManager Content { get; set; }
         public static SpriteBatch SpriteBatch { get; set; }
+        public static (int Width, int Height) ScreenSize { get; set; }
+        public static Texture2D PixelTexture { get; set; }
+        public static SpriteFont Font { get; set; }
         public static Point Bounds { get; set; }
 
         public static void Update(GameTime gt)

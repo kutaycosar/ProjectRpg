@@ -1,29 +1,28 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Linq;
 
 namespace ProjectRpg.Managers
 {
     public class CollisionManager
     {
-        public static bool DidCollide(GameObject callerObject)
-        {
+        public static bool DidCollide(ICollidable callerObject)        {
 
-            foreach (GameObject gObj in GameObjectManager.GetGameObjects())
+            foreach (ICollidable collidable in GameObjectManager.GetGameObjects())
             {
-                if(gObj != callerObject)
+                if (collidable != callerObject)
                 {
-                    float distance = Vector2.Distance(callerObject.Position, gObj.HitPosBox);
+                    float distance = Vector2.Distance(callerObject.Position, collidable.HitBoxPos);
 
-                    float combinedRadius = callerObject.Radius + gObj.Radius;
+                    float combinedRadius = callerObject.Radius + collidable.Radius;
 
                     if (distance < combinedRadius)
                     {
                         return false;
                     }
                 }
-               
-                
+
             }
             return true;
         }

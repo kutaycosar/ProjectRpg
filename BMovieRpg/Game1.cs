@@ -10,7 +10,7 @@ namespace ProjectRpg
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private GameManager _gameManager;
-        
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -21,7 +21,9 @@ namespace ProjectRpg
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            Globals.Bounds = new(1536, 960);
+            Globals.ScreenSize = (1536, 960);
+            Globals.Bounds = new Point(Globals.ScreenSize.Width, Globals.ScreenSize.Height);
+
             _graphics.PreferredBackBufferWidth = Globals.Bounds.X;
             _graphics.PreferredBackBufferHeight = Globals.Bounds.Y;
             _graphics.ApplyChanges();
@@ -37,6 +39,10 @@ namespace ProjectRpg
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             // TODO: use this.Content to load your game content here
             Globals.SpriteBatch = _spriteBatch;
+            Globals.Font = Globals.Content.Load<SpriteFont>("Arial");
+
+            Globals.PixelTexture = new Texture2D(_graphics.GraphicsDevice, 1, 1);
+            Globals.PixelTexture.SetData(new[] { Color.White });
         }
 
         protected override void Update(GameTime gameTime)

@@ -1,49 +1,33 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using ProjectRpg.Structs;
 using System;
+using System.Xml.Linq;
 
 namespace ProjectRpg
 {
-    public class GameObject : Sprite//TODO: not every game object is collidable so think about making new class for collidable objects(obstacles?)
+    
+    public class GameObject : Sprite, ISObj//TODO: not every game object is collidable so think about making new class for collidable objects(obstacles?)
     {
-        protected string _tag;
-        protected Vector2 _position;
-        protected float _radius;
-        protected Vector2 _hitPosBox;
+        protected PosData pos;
+        protected string tag;
+        
 
-        public GameObject(Texture2D texture, float radius, string tag, Vector2 position, Vector2 hitPosBox) : base(texture)
+        public GameObject(Texture2D texture, string tag, Vector2 position) : base(texture)
         {
-            _tag = tag;
-            _position = position;
-            _radius = radius;
-            _hitPosBox = hitPosBox;
+            this.tag = tag;
+            this.pos.Pos = position;
         }
 
-        public string Tag
-        {
-            get { return _tag; }
-        }
-        public Vector2 Position
-        {
-            get { return _position; }
-            set { _position = value; }
-        }
-
-        public float Radius
-        {
-            get { return _radius; }
-        }
-
-        public Vector2 HitPosBox
-        {
-            get { return _hitPosBox; }
-            set { _hitPosBox = value; }
-        }
+        public string Tag { get; set; }
+        public Vector2 Position { get { return pos.Pos; } protected set { pos.Pos = value; } }
+        public Vector2 CurrentPos { get { return pos.CurrentPos; } protected set { pos.CurrentPos = value; } }
+        public Vector2 LastPos { get { return pos.LastPos; } protected set { pos.LastPos = value; } }
 
         public virtual void Draw()
         {
-            Globals.SpriteBatch.Draw(_texture, Position,Color.White);
+            Globals.SpriteBatch.Draw(this.texture, Position,Color.White);
         }
 
     }

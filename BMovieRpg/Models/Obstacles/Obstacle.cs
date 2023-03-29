@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using ProjectRpg.Structs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,20 +8,29 @@ using System.Text;
 
 namespace ProjectRpg.Models.Obstacles
 {
-    public class Obstacle : GameObject
+    public class Obstacle : GameObject, ICollidable
     {
-        public Obstacle(Texture2D texture, float radius, string tag, Vector2 position, Vector2 hitCenter) : base(texture, radius, tag, position, hitCenter)
+        protected PhyscData physcData;
+        public Obstacle(Texture2D texture, string tag, Vector2 position) : base(texture, tag, position)
         {
 
+        }
+
+        public float Radius { get { return physcData.Radius; } set { physcData.Radius = value; } }
+        public Vector2 HitBoxPos { get { return physcData.HitBoxPos; } set { physcData.HitBoxPos = value; } }
+
+        public void OnCollision()
+        {
+            throw new NotImplementedException();
         }
     }
 
     public class Tree : Obstacle
     {
-        public Tree(Texture2D texture, string tag, Vector2 position) : base(texture, 0, tag, position, Vector2.Zero)
+        public Tree(Texture2D texture, string tag, Vector2 position) : base(texture, tag, position)
         {
-            _radius = 18;
-            _hitPosBox = new Vector2(Position.X + 15, Position.Y + 100);
+            Radius = 18;
+            HitBoxPos = new Vector2(Position.X + 15, Position.Y + 100);
 
         }
 
@@ -28,10 +38,10 @@ namespace ProjectRpg.Models.Obstacles
 
     public class Bush : Obstacle
     {
-        public Bush(Texture2D texture, string tag, Vector2 position) : base(texture, 0, tag, position, Vector2.Zero)
+        public Bush(Texture2D texture, string tag, Vector2 position) : base(texture, tag, position)
         {
-            _radius = 25;
-            _hitPosBox = new Vector2(Position.X + 10, Position.Y + 5);
+            Radius = 25;
+            HitBoxPos = new Vector2(Position.X + 10, Position.Y + 5);
         }
     }
 }

@@ -1,45 +1,28 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using ProjectRpg.Structs;
 
 namespace ProjectRpg.Models.Characters
 {
-    public class Character : GameObject, IAnimated, IMovable, ICollidable
+    public class Character : DynGameObject, IAnimated, ICollidable
     {
-        protected int _speed;
-        protected bool _isMoving;
-        protected Vector2 _lastPosition;
-        public Character(Texture2D texture, float radius, string tag, Vector2 position, Vector2 hitPosBox,
-            int speed) : 
-            base(texture, radius, tag, position, hitPosBox)
+        protected PhyscData physcData;
+        protected AnimationManager animationManager;
+        
+        public Character(Texture2D texture, string tag, Vector2 position) : 
+            base(texture, tag, position)
         {
-            _speed = speed;
-            _isMoving = true;
-            _lastPosition = Position;
-
         }
 
-        public int Speed { get { return _speed; } set { _speed = value; } }
+        public AnimationManager AnimationManager { get { return animationManager; } protected set { animationManager = value; } }
 
-        public bool IsMoving { get { return IsMoving; } set { _isMoving = value; } }
-
-        public Vector2 LastPosition { get { return _lastPosition; } }
-
-        public AnimationManager AnimationManager { get; set; }
-
-        public virtual void Move()
-        {
-            throw new System.NotImplementedException();
-        }
+        public float Radius { get { return physcData.Radius; } protected set { physcData.Radius = value; } }
+        public Vector2 HitBoxPos {get { return physcData.HitBoxPos; } protected set { physcData.HitBoxPos = value; } }
 
         public virtual void OnCollision()
         {
             throw new System.NotImplementedException();
         }
 
-        public virtual void Update()
-        {
-            throw new System.NotImplementedException();
-        }
     }
-   
 }

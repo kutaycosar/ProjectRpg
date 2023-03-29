@@ -8,16 +8,15 @@ using System.Threading.Tasks;
 
 namespace ProjectRpg.Models.Characters.Monsters
 {
-    public class Snake : Monster, IMovable, ICollidable, IAnimated
+    public class Snake : Monster
     {
-        public Snake(Texture2D texture, string tag, Vector2 position)
-            : base(texture, tag, position, 0)
+        public Snake(Texture2D texture, string tag, Vector2 position) : base(texture, tag, position)
         {
-            _direction = Direction.None;
-            _speed = 200;
-            _radius = 56;
-            _hitPosBox = new Vector2(Position.X + 29, Position.Y + 31);
-            _lastPosition = Position;
+            Speed = 200;
+            LastPos = Position;
+
+            Radius = 56;
+            HitBoxPos = new Vector2(Position.X + 29, Position.Y + 31);
         }
     }
 }
