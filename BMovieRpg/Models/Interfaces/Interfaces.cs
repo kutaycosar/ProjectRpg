@@ -1,5 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using ProjectRpg.Structs;
+using System.Collections.Generic;
+using static ProjectRpg.Structs.CustomType;
 
 namespace ProjectRpg
 {
@@ -30,7 +32,7 @@ namespace ProjectRpg
         Vector2 Position { get; }  
         float Radius { get; }
         Vector2 HitBoxPos { get; }
-        
+
         void OnCollision();
     }
     
@@ -58,7 +60,7 @@ namespace ProjectRpg
 
     public interface IDialogue
     {
-        
+        List<Dialogue> Dialogues { get;}
     }
 
 }

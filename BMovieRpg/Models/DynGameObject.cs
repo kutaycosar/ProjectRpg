@@ -7,7 +7,7 @@ namespace ProjectRpg.Models
 {
     public class DynGameObject : GameObject, IMovable
     {
-        protected MoveData moveData;
+        protected Data.MoveData moveData;
         
         public DynGameObject(Texture2D texture, string tag, Vector2 position) : base(texture, tag, position)
         {

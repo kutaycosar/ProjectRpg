@@ -17,7 +17,7 @@
   <Class Name="ProjectRpg.GameManager" Collapsed="true">
     <Position X="16.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABQAAAAYACAAAgAAAAAACQAAAQABEAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>ABQAAAAYACAAAgAAAAEACQAAAQAFEAAAAAAAAAAAAAA=</HashCode>
       <FileName>Managers\GameManager.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -38,7 +38,7 @@
   <Class Name="ProjectRpg.GameObject" Collapsed="true">
     <Position X="7.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAACAAAAAgEgAgAAAAAIAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAACAAAAAgEgAgAAAAAAAAAAIAQAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\GameObject.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -60,7 +60,7 @@
   <Class Name="ProjectRpg.Globals" Collapsed="true">
     <Position X="14.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAgAAAAAAAAAAAAAAAAAAAAAAQQAAAAAAAgA=</HashCode>
+      <HashCode>AAQAAABAAgAAAAAAAAIAAAAAAAAAAAAAQQAAAAACAgA=</HashCode>
       <FileName>Globals.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -82,9 +82,10 @@
   <Class Name="ProjectRpg.Models.Characters.Npc" Collapsed="true">
     <Position X="3.25" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAQAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Characters\Npcs\Npc.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ProjectRpg.Models.Characters.Player" Collapsed="true">
     <Position X="5.5" Y="7.5" Width="1.5" />
@@ -156,7 +157,7 @@
   <Class Name="ProjectRpg.Models.Ui.UIObject" Collapsed="true">
     <Position X="1" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABAAAAgQgQAAAIEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAABAAAAgAgEBAAIFAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\UI\UIObject.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -164,15 +165,23 @@
   <Class Name="ProjectRpg.Models.Ui.DialogueUI" Collapsed="true">
     <Position X="1" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAgAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAQAAAAgAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\UI\DialogueUI.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
-  <Struct Name="ProjectRpg.Structs.MoveData" Collapsed="true">
-    <Position X="14.75" Y="3.75" Width="1.5" />
+  <Struct Name="ProjectRpg.Structs.Data" Collapsed="true">
+    <Position X="16.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAACAAAAABAAAAAAEAAAAAAAAAAAA=</HashCode>
-      <FileName>Structs\Structs.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Structs\Data.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ProjectRpg.Structs.CustomType" Collapsed="true">
+    <Position X="14.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Structs\CustomType.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Interface Name="ProjectRpg.IMovable" Collapsed="true">

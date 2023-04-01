@@ -76,6 +76,8 @@ namespace ProjectRpg
         public void InitNpc()
         {
             _npc = new Npc("satici", Globals.Content.Load<Texture2D>("player"), "npc", new Vector2(800, 800));
+            
+
 
             GameObjectManager.AddGameObject(_npc);
         }

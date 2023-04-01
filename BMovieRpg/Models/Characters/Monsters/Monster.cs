@@ -1,7 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using ProjectRpg.Managers;
-using System;
 
 namespace ProjectRpg.Models.Characters
 {

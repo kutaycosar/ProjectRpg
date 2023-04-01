@@ -2,15 +2,13 @@
 using Microsoft.Xna.Framework.Graphics;
 using ProjectRpg.Structs;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+
 
 namespace ProjectRpg.Models.Obstacles
 {
     public class Obstacle : GameObject, ICollidable
     {
-        protected PhyscData physcData;
+        protected Data.PhyscData physcData;
         public Obstacle(Texture2D texture, string tag, Vector2 position) : base(texture, tag, position)
         {
 

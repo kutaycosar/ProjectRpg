@@ -6,7 +6,7 @@ namespace ProjectRpg.Models.Characters
 {
     public class Character : DynGameObject, IAnimated, ICollidable
     {
-        protected PhyscData physcData;
+        protected Data.PhyscData physcData;
         protected AnimationManager animationManager;
         
         public Character(Texture2D texture, string tag, Vector2 position) : 
