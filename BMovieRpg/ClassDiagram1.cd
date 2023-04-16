@@ -1,37 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
   <Class Name="ProjectRpg.AnimatedSprite" Collapsed="true">
-    <Position X="14.75" Y="0.5" Width="1.5" />
+    <Position X="11.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAgAAAAkAAAAgAAAAAAAAAAAAAAAIAAAgAAAA=</HashCode>
       <FileName>Animation\AnimatedSprite.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectRpg.AnimationManager" Collapsed="true">
-    <Position X="16.5" Y="0.5" Width="1.5" />
+    <Position X="13.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAwAAAAAAAAAAAAAAAAQAEABAABAAAAAAAAAAAAgAAA=</HashCode>
       <FileName>Managers\AnimationManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectRpg.GameManager" Collapsed="true">
-    <Position X="16.5" Y="1.5" Width="1.5" />
+    <Position X="13.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABQAAAAYACAAAgAAAAEACQAAAQAFEAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>ABQAAEAYACAAAgAAAAEACQAAAQAFEAAAAAAAAAAAAAA=</HashCode>
       <FileName>Managers\GameManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectRpg.GameObjectManager" Collapsed="true">
-    <Position X="18.25" Y="1.5" Width="1.5" />
+    <Position X="15" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>Managers\GameObjectManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectRpg.PlayerInputManager" Collapsed="true">
-    <Position X="16.5" Y="2.5" Width="1.5" />
+    <Position X="11.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAAgBACAAAAAAAAAQAABAAAAIAAQAAAA=</HashCode>
       <FileName>Managers\PlayerInputManager.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -51,23 +51,23 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectRpg.Game1" Collapsed="true">
-    <Position X="14.75" Y="1.5" Width="1.5" />
+    <Position X="11.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAACAAAAwAAAAAAAAAAAAAAAAACAIAAAAAAAAQ=</HashCode>
       <FileName>Game1.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectRpg.Globals" Collapsed="true">
-    <Position X="14.75" Y="2.5" Width="1.5" />
+    <Position X="16.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAABAAgAAAAAAAAIAAAAAAAAAAAAAQQAAAAACAgA=</HashCode>
       <FileName>Globals.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectRpg.Managers.CollisionManager" Collapsed="true">
-    <Position X="18.25" Y="0.5" Width="1.5" />
+    <Position X="15" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAIAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Managers\CollisionManager.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -77,12 +77,11 @@
       <HashCode>AAQAAAAAAIAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
       <FileName>Models\Characters\Monsters\Monster.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ProjectRpg.Models.Characters.Npc" Collapsed="true">
     <Position X="3.25" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAQAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Characters\Npcs\Npc.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -90,7 +89,7 @@
   <Class Name="ProjectRpg.Models.Characters.Player" Collapsed="true">
     <Position X="5.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAIAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAIAAAAAAAAAAAAAAIAAAAAAAIAAAAAAAAAA=</HashCode>
       <FileName>Models\Characters\Player\Player.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -103,7 +102,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ProjectRpg.Models.Obstacles.Obstacle" Collapsed="true">
-    <Position X="11" Y="3.25" Width="1.5" />
+    <Position X="8.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIIAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAA=</HashCode>
       <FileName>Models\Obstacles\Obstacle.cs</FileName>
@@ -111,14 +110,14 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ProjectRpg.Models.Obstacles.Tree" Collapsed="true">
-    <Position X="12.25" Y="4.75" Width="1.5" />
+    <Position X="9.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Obstacles\Obstacle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectRpg.Models.Obstacles.Bush" Collapsed="true">
-    <Position X="10" Y="4.75" Width="1.5" />
+    <Position X="7.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Obstacles\Obstacle.cs</FileName>
@@ -148,7 +147,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ProjectRpg.Managers.UIManager" Collapsed="true">
-    <Position X="18.25" Y="2.5" Width="1.5" />
+    <Position X="13.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Managers\UIManager.cs</FileName>
@@ -157,56 +156,69 @@
   <Class Name="ProjectRpg.Models.Ui.UIObject" Collapsed="true">
     <Position X="1" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABAAAAgAgEBAAIFAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAABAAAAgAgEBAAIFAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\UI\UIObject.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Class Name="ProjectRpg.Models.Characters.Npcs.TestNpc" Collapsed="true">
+    <Position X="3.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAASAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAIAAAA=</HashCode>
+      <FileName>Models\Characters\Npcs\TestNpc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectRpg.Managers.DialogueManager" Collapsed="true">
+    <Position X="16.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAEAEAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAECA=</HashCode>
+      <FileName>Managers\DialogueManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="ProjectRpg.Models.Ui.DialogueUI" Collapsed="true">
     <Position X="1" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAQAAAAgAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\UI\DialogueUI.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Struct Name="ProjectRpg.Structs.Data" Collapsed="true">
-    <Position X="16.5" Y="3.5" Width="1.5" />
+    <Position X="13.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Structs\Data.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="ProjectRpg.Structs.CustomType" Collapsed="true">
-    <Position X="14.75" Y="3.5" Width="1.5" />
+    <Position X="11.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Structs\CustomType.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Interface Name="ProjectRpg.IMovable" Collapsed="true">
-    <Position X="18.25" Y="5" Width="1.5" />
+    <Position X="15" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAIAAAAAAACAAAAABAAAAAAEAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Interfaces\Interfaces.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="ProjectRpg.ICollidable" Collapsed="true">
-    <Position X="16.5" Y="5" Width="1.5" />
+    <Position X="13.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAAAAAAAgAAAAAAAAAAAAAAAAIAAAACAAAAA=</HashCode>
       <FileName>Models\Interfaces\Interfaces.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="ProjectRpg.IAnimated" Collapsed="true">
-    <Position X="14.75" Y="5" Width="1.5" />
+    <Position X="11.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Interfaces\Interfaces.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="ProjectRpg.Direction" Collapsed="true">
-    <Position X="14.75" Y="6" Width="1.5" />
+    <Position X="11.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAIAAAACACAAAEAAAA=</HashCode>
       <FileName>enums\Enums.cs</FileName>

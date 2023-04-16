@@ -25,9 +25,15 @@ namespace ProjectRpg.Models.Ui
 
         public bool IsActive { get { return this.isActive; } set { isActive = value; } }
 
+        public virtual void Update()
+        {
+            throw new NotImplementedException();
+        }
+
         public virtual void Draw()
         {
             throw new NotImplementedException();
         }
+
     }
 }

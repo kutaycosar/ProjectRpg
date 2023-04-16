@@ -11,12 +11,14 @@ namespace ProjectRpg.Structs
         public struct Dialogue
         {
             public string Text;
-            public string Tag;
+            public string Id;
+            public string ResponseId;
 
-            public Dialogue(string text, string tag)
+            public Dialogue(string text, string id, string responseId)
             {
                 Text = text;
-                Tag = tag;
+                Id = id;
+                ResponseId = responseId;
             }
         }
 

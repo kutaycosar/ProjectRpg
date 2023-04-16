@@ -47,10 +47,5 @@ namespace ProjectRpg
             }
             
         }
-
-        //public AnimatedSprite CurrentAnim()
-        //{
-        //    get{ return _currentAnim; }
-        //}
     }
 }

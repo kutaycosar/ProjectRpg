@@ -58,7 +58,7 @@ namespace ProjectRpg
         void Draw();
     }
 
-    public interface IDialogue
+    public interface IHasDialogue
     {
         List<Dialogue> Dialogues { get;}
     }

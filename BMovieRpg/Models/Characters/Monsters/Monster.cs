@@ -4,7 +4,7 @@ using ProjectRpg.Managers;
 
 namespace ProjectRpg.Models.Characters
 {
-    public class Monster : Character, IAnimated, ICollidable
+    public class Monster : Character
     {
         public Monster(Texture2D texture, string tag, Vector2 position)
             : base(texture, tag, position)

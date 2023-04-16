@@ -7,7 +7,8 @@ namespace ProjectRpg.Managers
 {
     public class CollisionManager
     {
-        public static bool DidCollide(ICollidable callerObject)        {
+        public static bool DidCollide(ICollidable callerObject)
+        {
 
             foreach (ICollidable collidable in GameObjectManager.GetGameObjects())
             {
@@ -25,6 +26,15 @@ namespace ProjectRpg.Managers
 
             }
             return true;
+        }
+
+        public static void InteractionManager(GameObject callerObject)
+        {
+            foreach(GameObject gObj in GameObjectManager.GetGameObjects())
+            {
+
+
+            }
         }
     }
 }

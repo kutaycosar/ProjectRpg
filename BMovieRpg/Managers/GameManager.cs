@@ -5,6 +5,7 @@ using ProjectRpg.Models.Obstacles;
 using ProjectRpg.Models.Characters;
 using ProjectRpg.Models.Characters.Monsters;
 using ProjectRpg.Models.Ui;
+using ProjectRpg.Models.Characters.Npcs;
 
 namespace ProjectRpg
 {
@@ -13,6 +14,7 @@ namespace ProjectRpg
         private Player _player;
 
         private Npc _npc;
+        private TestNpc _dialogueNpc;
 
         private Monster _snake;
 
@@ -39,6 +41,8 @@ namespace ProjectRpg
             _player.Update();
             _snake.Update();
 
+            _dialogueUi.Update();
+
             Globals.Update(gameTime);
 
         }
@@ -51,11 +55,10 @@ namespace ProjectRpg
             foreach (GameObject gameObject in GameObjectManager.GetGameObjects())
             {
                 gameObject.Draw();
-
-                
             }
 
-            _dialogueUi.Draw();
+            if(_dialogueUi.IsActive) _dialogueUi.Draw();
+
         }
 
         public void InitUiElements()
@@ -76,10 +79,11 @@ namespace ProjectRpg
         public void InitNpc()
         {
             _npc = new Npc("satici", Globals.Content.Load<Texture2D>("player"), "npc", new Vector2(800, 800));
-            
+            _dialogueNpc = new TestNpc("konusucu", Globals.Content.Load<Texture2D>("player"), "npc", new Vector2(550, 600));
 
 
-            GameObjectManager.AddGameObject(_npc);
+
+            GameObjectManager.AddGameObject(_npc, _dialogueNpc);
         }
 
         public void InitObjects()

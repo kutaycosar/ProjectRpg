@@ -44,6 +44,11 @@ namespace ProjectRpg.Models.Characters
             if (!IsMoving) this.Position = LastPos;  
         } 
 
+        public void Interact()
+        {
+
+        }
+
         public override void Update()
         {
             OnCollision();
