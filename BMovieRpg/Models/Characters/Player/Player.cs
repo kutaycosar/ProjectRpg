@@ -1,12 +1,13 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using ProjectRpg.Managers;
-
+using ProjectRpg.Models.Physics;
 
 namespace ProjectRpg.Models.Characters
 {
     public sealed class Player : Person
     {
+        public int Number { get; set; }
         public Player(string name, Texture2D texture, string tag, Vector2 position) : 
             base(name,texture,tag, position)
         {
@@ -29,29 +30,28 @@ namespace ProjectRpg.Models.Characters
                     Direction.Bottom => new Vector2(0, 1),
                     Direction.Right => new Vector2(+1, 0),
                 };
-                if(IsMoving == true)
+                if (IsMoving)
                 {
                     LastPos = Position;
                     Position += dir * Speed * Globals.TotalSeconds;
                 }
-                
+
             }
+        }
+
+        public override bool DidCollide(float distance, float combinedRadius)
+        {
+            return base.DidCollide(distance, combinedRadius);
         }
 
         public override void OnCollision()
         {
-            IsMoving = CollisionManager.DidCollide(this);
-            if (!IsMoving) this.Position = LastPos;  
-        } 
-
-        public void Interact()
-        {
-
+            base.OnCollision();
         }
 
         public override void Update()
         {
-            OnCollision();
+            InteractionManager.HandleInteractions(this);
 
             AnimationManager.Update();
             HitBoxPos = new Vector2(Position.X + 29, Position.Y + 31);

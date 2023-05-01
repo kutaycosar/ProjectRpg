@@ -25,8 +25,8 @@ namespace ProjectRpg.Models.Characters
 
         public override void OnCollision()
         {
-            IsMoving = CollisionManager.DidCollide(this);
-            if (!IsMoving) Position = LastPos;
+            //IsMoving = CollisionManager.DidCollide(this);
+            //if (!IsMoving) Position = LastPos;
         }
     }
 }

@@ -17,6 +17,11 @@ namespace ProjectRpg.Models.Obstacles
         public float Radius { get { return physcData.Radius; } set { physcData.Radius = value; } }
         public Vector2 HitBoxPos { get { return physcData.HitBoxPos; } set { physcData.HitBoxPos = value; } }
 
+        public bool DidCollide(float distance, float combinedRadius)
+        {
+            throw new NotImplementedException();
+        }
+
         public void OnCollision()
         {
             throw new NotImplementedException();

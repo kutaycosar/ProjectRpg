@@ -21,8 +21,6 @@ namespace ProjectRpg
         bool IsMoving { get; }
         int Speed { get;}
         Direction Direction { get; }
-
-
         void Move();
         void Update();
     }
@@ -32,10 +30,9 @@ namespace ProjectRpg
         Vector2 Position { get; }  
         float Radius { get; }
         Vector2 HitBoxPos { get; }
-
+        bool DidCollide(float distance, float combinedRadius);
         void OnCollision();
     }
-    
 
     public interface IAnimated 
     {
@@ -52,9 +49,7 @@ namespace ProjectRpg
         Vector2 Position { get; }
         int Width { get; }
         int Height { get; }
-
         bool IsActive { get; set; }
-
         void Draw();
     }
 

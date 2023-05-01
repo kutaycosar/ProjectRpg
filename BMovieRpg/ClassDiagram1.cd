@@ -64,13 +64,6 @@
       <FileName>Globals.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ProjectRpg.Managers.CollisionManager" Collapsed="true">
-    <Position X="15" Y="0.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Managers\CollisionManager.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="ProjectRpg.Models.Characters.Monster" Collapsed="true">
     <Position X="7.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
@@ -89,14 +82,14 @@
   <Class Name="ProjectRpg.Models.Characters.Player" Collapsed="true">
     <Position X="5.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAIAAAAAAAAAAAAAAIAAAAAAAIAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAIAAAAIAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
       <FileName>Models\Characters\Player\Player.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectRpg.Models.Characters.Character" Collapsed="true">
     <Position X="5.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIIAAAACAAAAAAAACAAAAAAAAAAAAAAIAAAACAAAAA=</HashCode>
+      <HashCode>AAIIIAAACAAAAAAAACAAAAAAAAAAAAAAIAAAACAAAAA=</HashCode>
       <FileName>Models\Characters\Character.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -104,7 +97,7 @@
   <Class Name="ProjectRpg.Models.Obstacles.Obstacle" Collapsed="true">
     <Position X="8.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIIAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAA=</HashCode>
+      <HashCode>AAIIIAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAA=</HashCode>
       <FileName>Models\Obstacles\Obstacle.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -182,6 +175,20 @@
       <FileName>Models\UI\DialogueUI.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="ProjectRpg.Managers.InteractionManager" Collapsed="true">
+    <Position X="1.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAASAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Managers\CollisionManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectRpg.Models.Physics.Collision" Collapsed="true">
+    <Position X="1.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Physics\Collision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Struct Name="ProjectRpg.Structs.Data" Collapsed="true">
     <Position X="13.25" Y="4" Width="1.5" />
     <TypeIdentifier>
@@ -197,7 +204,7 @@
     </TypeIdentifier>
   </Struct>
   <Interface Name="ProjectRpg.IMovable" Collapsed="true">
-    <Position X="15" Y="5.25" Width="1.5" />
+    <Position X="15.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAIAAAAAAACAAAAABAAAAAAEAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Interfaces\Interfaces.cs</FileName>
@@ -206,7 +213,7 @@
   <Interface Name="ProjectRpg.ICollidable" Collapsed="true">
     <Position X="13.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAIAAAAAAAAAAAgAAAAAAAAAAAAAAAAIAAAACAAAAA=</HashCode>
+      <HashCode>AAAIIAAAAAAAAAAgAAAAAAAAAAAAAAAAIAAAACAAAAA=</HashCode>
       <FileName>Models\Interfaces\Interfaces.cs</FileName>
     </TypeIdentifier>
   </Interface>
