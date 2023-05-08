@@ -8,13 +8,10 @@ namespace ProjectRpg.Models.Characters
     public sealed class Player : Person
     {
         public int Number { get; set; }
-        public Player(string name, Texture2D texture, string tag, Vector2 position) : 
-            base(name,texture,tag, position)
+        public Player(string name, Texture2D texture, string tag, Vector2 pos) : 
+            base(name,texture,tag, pos)
         {
             this.moveData.Speed = 200;
-            this.physcData.Radius = 56;
-            this.physcData.HitBoxPos = new Vector2(Position.X + 29, Position.Y + 31);
-
             this.animationManager = new AnimationManager(new AnimatedSprite[4]);
         }
 
@@ -32,16 +29,16 @@ namespace ProjectRpg.Models.Characters
                 };
                 if (IsMoving)
                 {
-                    LastPos = Position;
-                    Position += dir * Speed * Globals.TotalSeconds;
+                    LastPos = Pos;
+                    Pos += dir * Speed * Globals.TotalSeconds;
                 }
 
             }
         }
 
-        public override bool DidCollide(float distance, float combinedRadius)
+        public override bool DidCollide(ICollidable callerObj, ICollidable otherObj)
         {
-            return base.DidCollide(distance, combinedRadius);
+            return base.DidCollide(this, otherObj);
         }
 
         public override void OnCollision()
@@ -54,7 +51,6 @@ namespace ProjectRpg.Models.Characters
             InteractionManager.HandleInteractions(this);
 
             AnimationManager.Update();
-            HitBoxPos = new Vector2(Position.X + 29, Position.Y + 31);
 
             Move();
         }

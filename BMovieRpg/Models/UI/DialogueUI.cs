@@ -14,26 +14,39 @@ namespace ProjectRpg.Models.Ui
         protected Rectangle boxRect;
         //dialogue manager 
 
-        public DialogueUI(Texture2D texture, Vector2 position, int width, int height) : base(texture, position, width, height)
+        public DialogueUI(Texture2D texture, Vector2 pos, int width, int height) : base(texture, pos, width, height)
         {
-            boxRect = new Rectangle((int)this.position.X / 2 - width / 2, (int)this.position.Y / 2 - height /2 ,
+            boxRect = new Rectangle((int)this.Pos.X / 2 - width / 2, (int)this.Pos.Y / 2 - height /2 ,
             this.sizeData.Width, this.sizeData.Height);
         }
 
-        public override void Update()
-        {
-            if (PlayerInputManager._isFPressed && PlayerInputManager.WasKeyPressed(Keys.F))
-            {
-                this.IsActive = this.IsActive ? false : true;
-            }
-        }
+        //public override void Update()
+        //{
+        //    if (PlayerInputManager._isFPressed && PlayerInputManager.WasKeyPressed(Keys.F))
+        //    {
+        //        this.IsActive = this.IsActive ? false : true;
+        //    }
+        //}
 
         public override void Draw()
         {
+            if (!isActive)
+            {
+                return;
+            }
             Globals.SpriteBatch.Draw(Globals.PixelTexture, this.boxRect, new Color(244, 164, 96, 64));
-            Globals.SpriteBatch.DrawString(Globals.Font, $"is f pressed : {PlayerInputManager._isFPressed} " + $"was f pressed : {PlayerInputManager._isFPressed}", new Vector2(boxRect.X + 10, boxRect.Y + 10), Color.Black);
 
-    
+            int offSetY = 10; // Offset for vertical Posing of each dialogue
+
+            foreach (Dialogue dialogue in DialogueManager.dialoguesToShow)
+            {
+                Globals.SpriteBatch.DrawString(Globals.Font, dialogue.Text,
+                    new Vector2(boxRect.X + 10, boxRect.Y + offSetY), Color.Black);
+
+                offSetY += 20; // Increase the offset for the next dialogue
+            }
+
+            
         }
 
     }

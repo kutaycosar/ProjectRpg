@@ -6,6 +6,7 @@ using ProjectRpg.Models.Characters;
 using ProjectRpg.Models.Characters.Monsters;
 using ProjectRpg.Models.Ui;
 using ProjectRpg.Models.Characters.Npcs;
+using ProjectRpg.Managers;
 
 namespace ProjectRpg
 {
@@ -13,17 +14,18 @@ namespace ProjectRpg
     {
         private Player _player;
 
-        private Npc _npc;
-        private TestNpc _dialogueNpc;
+        //private Npc _npc;
+        //private TestNpc _testNpc;   
+        //private TestNpc _dialogueNpc;
 
-        private Monster _snake;
+        //private Monster _snake;
 
-        private Tree _tree;
+        //private Tree _tree;
         private Bush _bush;
 
         private DialogueUI _dialogueUi;
 
-        
+
         public GameManager()//TODO: Buradaki yuklemeleri ayri classlarda ypailacak sekilde ayarla yada method
         {
             InitUiElements();
@@ -31,7 +33,6 @@ namespace ProjectRpg
             InitNpc();
             InitObjects();
             InitEnemies();
-            
         }
 
         public void Update(GameTime gameTime)
@@ -39,9 +40,9 @@ namespace ProjectRpg
 
             PlayerInputManager.Update();
             _player.Update();
-            _snake.Update();
+            //_snake.Update();
 
-            _dialogueUi.Update();
+            //_dialogueUi.Update();
 
             Globals.Update(gameTime);
 
@@ -49,7 +50,7 @@ namespace ProjectRpg
         
         public void Draw()
         {
-            _player.AnimationManager.CurrentAnim.Draw(Globals.SpriteBatch, _player.Position);
+            _player.AnimationManager.CurrentAnim.Draw(Globals.SpriteBatch, _player.Pos);
             
 
             foreach (GameObject gameObject in GameObjectManager.GetGameObjects())
@@ -64,11 +65,12 @@ namespace ProjectRpg
         public void InitUiElements()
         {
             _dialogueUi = new DialogueUI(null, new Vector2(Globals.ScreenSize.Width, Globals.ScreenSize.Height), 400, 200);
+            DialogueManager.DialogueUI = _dialogueUi;
         }
 
         public void InitPlayer()
         {
-            _player = new Player("kutay", Globals.Content.Load<Texture2D>("player"), "player", new Vector2(50, 50));
+            _player = new Player("kutay", Globals.Content.Load<Texture2D>("player"), "player", new Vector2(100, 100));
 
             _player.AnimationManager.SetAnimation(0, new AnimatedSprite(Globals.Content.Load<Texture2D>("playerUp"), 1, 4));
             _player.AnimationManager.SetAnimation(1, new AnimatedSprite(Globals.Content.Load<Texture2D>("playerLeft"), 1, 4));
@@ -78,30 +80,30 @@ namespace ProjectRpg
 
         public void InitNpc()
         {
-            _npc = new Npc("satici", Globals.Content.Load<Texture2D>("player"), "npc", new Vector2(800, 800));
-            _dialogueNpc = new TestNpc("konusucu", Globals.Content.Load<Texture2D>("player"), "npc", new Vector2(550, 600));
+            //_npc = new Npc("satici", Globals.Content.Load<Texture2D>("player"), "npc", new Vector2(800, 800));
+            //_dialogueNpc = new TestNpc("konusucu", Globals.Content.Load<Texture2D>("player"), "npc", new Vector2(100, 150));
 
 
 
-            GameObjectManager.AddGameObject(_npc, _dialogueNpc);
+            //GameObjectManager.AddGameObject(_npc/*, _dialogueNpc*/);
         }
 
         public void InitObjects()
         {
-            _tree = new Tree(Globals.Content.Load<Texture2D>("tree"), "tree", new Vector2(600, 600));
+            //_tree = new Tree(Globals.Content.Load<Texture2D>("tree"), "tree", new Vector2(600, 600));
             _bush = new Bush(Globals.Content.Load<Texture2D>("bush"), "bush", new Vector2(300, 300));
 
             
 
-            GameObjectManager.AddGameObject(_tree, _bush);
+            GameObjectManager.AddGameObject(/*_tree, */_bush);
         }
 
         public void InitEnemies()
         {
             //_snake = new Monster(Globals.Content.Load<Texture2D>("snakeEnemy"), "snake", new Vector2(400, 400));
-            _snake = new Snake(Globals.Content.Load<Texture2D>("snakeEnemy"), "snake", new Vector2(400, 400));
+            //_snake = new Snake(Globals.Content.Load<Texture2D>("snakeEnemy"), "snake", new Vector2(400, 400));
 
-            GameObjectManager.AddGameObject(_snake);
+            //GameObjectManager.AddGameObject(_snake);
         }
     }
 }

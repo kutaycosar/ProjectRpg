@@ -11,28 +11,27 @@ namespace ProjectRpg.Models.Characters
         protected Data.PhyscData physcData;
         protected AnimationManager animationManager;
         
-        public Character(Texture2D texture, string tag, Vector2 position) : 
-            base(texture, tag, position)
+        public Character(Texture2D texture, string tag, Vector2 pos) : 
+            base(texture, tag, pos)
         {
+            physcData.Scale = 1f;
         }
 
         public AnimationManager AnimationManager { get { return animationManager; } protected set { animationManager = value; } }
 
-        public float Radius { get { return physcData.Radius; } protected set { physcData.Radius = value; } }
-        public Vector2 HitBoxPos {get { return physcData.HitBoxPos; } protected set { physcData.HitBoxPos = value; } }
+        public float Scale { get { return physcData.Scale; } set { physcData.Scale = value; } }
 
-
-        public virtual bool DidCollide(float distance, float combinedRadius)
+        public virtual bool DidCollide(ICollidable callerObj, ICollidable otherObj)
         {
-            bool didCollide = Collision.CircleCollision(distance, combinedRadius);
+            bool didCollide = Collision.RectCollision(callerObj, otherObj);
             this.IsMoving = !didCollide;
-            
+
             return didCollide;
         }
 
         public virtual void OnCollision()
         {
-            this.Position = LastPos;
+            this.Pos = LastPos;
         }
 
     }

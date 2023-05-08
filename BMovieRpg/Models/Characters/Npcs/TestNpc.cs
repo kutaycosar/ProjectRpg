@@ -21,7 +21,7 @@ namespace ProjectRpg.Models.Characters.Npcs
         private Dialogue _nc2 = new Dialogue("o mallar iyidir tavsiye ederim", "N-C-2", "end");
 
 
-        public TestNpc(string name, Texture2D texture, string tag, Vector2 position) : base(name, texture, tag, position)
+        public TestNpc(string name, Texture2D texture, string tag, Vector2 pos) : base(name, texture, tag, pos)
         {
             this.name = name;
             this.dialogues.AddRange(new Dialogue[] { _na1, _na2, _pa1, _pq1, _pb1, _nb1, _pc1, _nc1, _pc2, _nc2 });

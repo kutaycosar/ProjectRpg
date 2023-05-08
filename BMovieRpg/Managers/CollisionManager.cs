@@ -2,11 +2,11 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using ProjectRpg.Models.Characters;
-using System.Linq;
+using ProjectRpg.Models.Physics;
 
 namespace ProjectRpg.Managers
 {
-    public class InteractionManager
+    public static class InteractionManager
     {
         public static void HandleInteractions(GameObject callerObj)
         {
@@ -18,20 +18,33 @@ namespace ProjectRpg.Managers
                     {
                         HandleCollision(callerObj as ICollidable, gObj as ICollidable);
                     }
+
+                    if(callerObj is Player && gObj is Npc)
+                    {
+                        if (Collision.RectCollision(callerObj as ICollidable, gObj as ICollidable))
+                        {
+                            if (PlayerInputManager._isFPressed && PlayerInputManager.WasKeyPressed(Keys.F))
+                            {
+                                HandleDialogue(callerObj as Player, gObj as Npc);
+                            }
+                        }
+                    }
                 }
             }
         }
 
-        public static void HandleCollision(ICollidable callerObj, ICollidable collidableObj)
+        public static void HandleCollision(ICollidable callerObj, ICollidable otherObj)
         {
-            float distance = Vector2.Distance(callerObj.Position, collidableObj.HitBoxPos);
-
-            float combinedRadius = callerObj.Radius + collidableObj.Radius;
-
-            if(callerObj.DidCollide(distance, combinedRadius))
+            if (callerObj.DidCollide(callerObj, otherObj))
             {
                 callerObj.OnCollision();
             }
+        }
+
+        public static void HandleDialogue(Player callerObj, Npc npcObj)
+        {
+            DialogueManager.DialogueUI.ToggleActive();
+            DialogueManager.SetFirstScreen(npcObj.Dialogues);
         }
         
     }

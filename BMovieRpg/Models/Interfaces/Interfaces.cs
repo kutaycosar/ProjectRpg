@@ -7,8 +7,10 @@ namespace ProjectRpg
 {
     public interface ISObj
     {
+        int OffSetX { get; }
+        int OffSetY { get; }
         string Tag { get;}
-        Vector2 Position { get;}
+        Vector2 Pos { get;}
         Vector2 CurrentPos { get; }
         Vector2 LastPos { get; }
 
@@ -27,10 +29,13 @@ namespace ProjectRpg
 
     public interface ICollidable
     {
-        Vector2 Position { get; }  
-        float Radius { get; }
-        Vector2 HitBoxPos { get; }
-        bool DidCollide(float distance, float combinedRadius);
+        int Width { get; }
+        int Height { get; }
+        int OffSetX { get; }
+        int OffSetY { get; }
+        float Scale { get; }
+        Vector2 Pos { get; }  
+        bool DidCollide(ICollidable callerObj, ICollidable otherObj);
         void OnCollision();
     }
 
@@ -46,10 +51,13 @@ namespace ProjectRpg
 
     public interface IUI
     {
-        Vector2 Position { get; }
+        Vector2 Pos { get; }
         int Width { get; }
         int Height { get; }
         bool IsActive { get; set; }
+
+        void ToggleActive();
+
         void Draw();
     }
 

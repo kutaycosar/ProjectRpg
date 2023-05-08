@@ -6,8 +6,8 @@ namespace ProjectRpg.Models.Characters
 {
     public class Monster : Character
     {
-        public Monster(Texture2D texture, string tag, Vector2 position)
-            : base(texture, tag, position)
+        public Monster(Texture2D texture, string tag, Vector2 pos)
+            : base(texture, tag, pos)
         {
         }
 
@@ -19,14 +19,13 @@ namespace ProjectRpg.Models.Characters
         public override void Update()
         {
             OnCollision();
-            HitBoxPos = new Vector2(Position.X + 29, Position.Y + 31);
             Move();
         }
 
         public override void OnCollision()
         {
             //IsMoving = CollisionManager.DidCollide(this);
-            //if (!IsMoving) Position = LastPos;
+            //if (!IsMoving) Pos = LastPos;
         }
     }
 }

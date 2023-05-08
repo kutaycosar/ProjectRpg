@@ -9,7 +9,7 @@ namespace ProjectRpg.Models
     {
         protected Data.MoveData moveData;
         
-        public DynGameObject(Texture2D texture, string tag, Vector2 position) : base(texture, tag, position)
+        public DynGameObject(Texture2D texture, string tag, Vector2 pos) : base(texture, tag, pos)
         {
             this.moveData.Direction = Direction.None;
             this.moveData.IsMoving = true;

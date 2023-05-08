@@ -22,8 +22,7 @@ namespace ProjectRpg.Structs
 
         public struct PhyscData
         {
-            public float Radius;
-            public Vector2 HitBoxPos;
+            public float Scale;
         }
 
         public struct SizeData

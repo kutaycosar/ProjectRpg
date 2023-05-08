@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectRpg.Models.Ui;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using static ProjectRpg.Structs.CustomType;
@@ -7,18 +8,22 @@ namespace ProjectRpg.Managers
 {
     public static class DialogueManager
     {
-        static Dialogue currentPlayerDialogue;
-        static Dialogue currentNpcDialogue;
+        private static DialogueUI _dialogueUI;
 
-        static bool isFirstScreen = true;
+        //static Dialogue currentPlayerDialogue;
+        //static Dialogue currentNpcDialogue;
 
-        static List<Dialogue> dialoguesToShow = new();
+        //static bool isFirstScreen = true;
+
+        public static List<Dialogue> dialoguesToShow = new();
+
+        public static DialogueUI DialogueUI { get { return _dialogueUI; } set { _dialogueUI = value; } }
 
         public static void SetFirstScreen(List<Dialogue> dialogues)
         {
             dialoguesToShow = dialogues.Where(d => d.Id.EndsWith("1")).ToList();
-            isFirstScreen = false;
-            currentNpcDialogue = dialogues.FirstOrDefault(d => d.Id == "N-A-1");
+            //isFirstScreen = false;
+            //currentNpcDialogue = dialogues.FirstOrDefault(d => d.Id == "N-A-1");
         }
 
         public static void ManageDialogue()
