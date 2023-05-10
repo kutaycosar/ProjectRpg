@@ -17,19 +17,19 @@ namespace ProjectRpg.Models.Physics
         //    return (distance - margin < combined);
         //}
 
-        public static bool RectCollision(ICollidable r1, ICollidable r2)
+        public static bool RectCollision(ICollidable r1, ICollidable r2, float expansionFactor = 1f)
         {
             // Calculate the bounds of the first rectangle
-            float r1Left = r1.Pos.X - ((r1.Width * r1.Scale) / 2) + r1.OffSetX;
-            float r1Right = r1.Pos.X + ((r1.Width * r1.Scale) / 2) + r1.OffSetX;
-            float r1Top = r1.Pos.Y - ((r1.Width * r1.Scale) / 2) + r1.OffSetY;
-            float r1Bottom = r1.Pos.Y + ((r1.Width * r1.Scale) / 2) + r1.OffSetY;
+            float r1Left = r1.Pos.X - ((r1.Width * r1.Scale) * expansionFactor / 2) + r1.OffSetX;
+            float r1Right = r1.Pos.X + ((r1.Width * r1.Scale) * expansionFactor / 2) + r1.OffSetX;
+            float r1Top = r1.Pos.Y - ((r1.Width * r1.Scale) * expansionFactor / 2) + r1.OffSetY;
+            float r1Bottom = r1.Pos.Y + ((r1.Width * r1.Scale) * expansionFactor / 2) + r1.OffSetY;
 
             // Calculate the bounds of the second rectangle with offsets
-            float r2Left = r2.Pos.X - ((r2.Width * r2.Scale) / 2) + r2.OffSetX;
-            float r2Right = r2.Pos.X + ((r2.Width * r2.Scale) / 2) + r2.OffSetX;
-            float r2Top = r2.Pos.Y - ((r2.Width * r2.Scale) / 2) + r2.OffSetY;
-            float r2Bottom = r2.Pos.Y + ((r2.Width * r2.Scale) / 2) + r2.OffSetY;
+            float r2Left = r2.Pos.X - ((r2.Width * r2.Scale) * expansionFactor / 2) + r2.OffSetX;
+            float r2Right = r2.Pos.X + ((r2.Width * r2.Scale) * expansionFactor / 2) + r2.OffSetX;
+            float r2Top = r2.Pos.Y - ((r2.Width * r2.Scale) * expansionFactor / 2) + r2.OffSetY;
+            float r2Bottom = r2.Pos.Y + ((r2.Width * r2.Scale) * expansionFactor / 2) + r2.OffSetY;
 
             // Check for overlap on the X axis
             if (r1Right < r2Left || r2Right < r1Left)

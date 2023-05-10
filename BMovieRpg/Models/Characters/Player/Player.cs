@@ -32,7 +32,6 @@ namespace ProjectRpg.Models.Characters
                     LastPos = Pos;
                     Pos += dir * Speed * Globals.TotalSeconds;
                 }
-
             }
         }
 

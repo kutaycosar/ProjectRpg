@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Comment CommentText="isimlendirme yanlis gibi . organizasyonu gozden gecir&#xD;&#xA;">
+    <Position X="10.719" Y="7.781" Height="1" Width="1.856" />
+  </Comment>
   <Class Name="ProjectRpg.AnimatedSprite" Collapsed="true">
     <Position X="11.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
@@ -17,7 +20,7 @@
   <Class Name="ProjectRpg.GameManager" Collapsed="true">
     <Position X="13.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABQAAEAYACAAAgAAAAEACQAAAQAFEAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>ABQAAEAIACAAAgAAAAEACQAAAAAFEAAAAAAAAAAAAAA=</HashCode>
       <FileName>Managers\GameManager.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -38,7 +41,7 @@
   <Class Name="ProjectRpg.GameObject" Collapsed="true">
     <Position X="7.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAACAAAAAgEgAAAAAAAAAAAAKAQAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAACAAAAAgEgDAAAAAAAAAAAKCQAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\GameObject.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -89,7 +92,7 @@
   <Class Name="ProjectRpg.Models.Characters.Character" Collapsed="true">
     <Position X="5.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAIAAACAAAAAAAACAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAIAAACAAAAAAAACIAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
       <FileName>Models\Characters\Character.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -97,7 +100,7 @@
   <Class Name="ProjectRpg.Models.Obstacles.Obstacle" Collapsed="true">
     <Position X="8.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIIIAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAA=</HashCode>
+      <HashCode>AAIAIAAAAAAAAAAAAAIAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
       <FileName>Models\Obstacles\Obstacle.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -221,7 +224,7 @@
   <Interface Name="ProjectRpg.ICollidable" Collapsed="true">
     <Position X="13.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIAAABAAAAAAAAAAAAEAAAACAAAAAIAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAIAAABAAAAADAAAIAAEAAAACAAAAAIAAAAAAAAAA=</HashCode>
       <FileName>Models\Interfaces\Interfaces.cs</FileName>
     </TypeIdentifier>
   </Interface>

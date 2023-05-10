@@ -21,7 +21,7 @@ namespace ProjectRpg.Managers
 
                     if(callerObj is Player && gObj is Npc)
                     {
-                        if (Collision.RectCollision(callerObj as ICollidable, gObj as ICollidable))
+                        if (Collision.RectCollision(callerObj as ICollidable, gObj as ICollidable, 1.2f))
                         {
                             if (PlayerInputManager._isFPressed && PlayerInputManager.WasKeyPressed(Keys.F))
                             {

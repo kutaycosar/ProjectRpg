@@ -17,7 +17,6 @@ namespace ProjectRpg
         void Draw();
     }
 
-
     public interface IMovable
     {
         bool IsMoving { get; }

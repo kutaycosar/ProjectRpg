@@ -12,7 +12,6 @@ namespace ProjectRpg.Models.Obstacles
         protected Data.PhyscData physcData;
         public Obstacle(Texture2D texture, string tag, Vector2 pos) : base(texture, tag, pos)
         {
-            physcData.Scale = 0.6f;
         }
 
         public float Scale { get { return physcData.Scale; } set { physcData.Scale = value; } }
@@ -32,8 +31,9 @@ namespace ProjectRpg.Models.Obstacles
     {
         public Tree(Texture2D texture, string tag, Vector2 pos) : base(texture, tag, pos)
         {
-            
-
+            physcData.Scale = 0.6f;
+            offSetData.Width = 15;
+            offSetData.Height = 110;
         }
 
     }
@@ -42,6 +42,7 @@ namespace ProjectRpg.Models.Obstacles
     {
         public Bush(Texture2D texture, string tag, Vector2 pos) : base(texture, tag, pos)
         {
+            physcData.Scale = 0.6f;
             offSetData.Width = 10;
             offSetData.Height = 10;
         }

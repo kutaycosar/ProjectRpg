@@ -15,12 +15,12 @@ namespace ProjectRpg
         private Player _player;
 
         //private Npc _npc;
-        //private TestNpc _testNpc;   
-        //private TestNpc _dialogueNpc;
+        private TestNpc _testNpc;
+        private TestNpc _dialogueNpc;
 
         //private Monster _snake;
 
-        //private Tree _tree;
+        private Tree _tree;
         private Bush _bush;
 
         private DialogueUI _dialogueUi;
@@ -81,21 +81,21 @@ namespace ProjectRpg
         public void InitNpc()
         {
             //_npc = new Npc("satici", Globals.Content.Load<Texture2D>("player"), "npc", new Vector2(800, 800));
-            //_dialogueNpc = new TestNpc("konusucu", Globals.Content.Load<Texture2D>("player"), "npc", new Vector2(100, 150));
+            _dialogueNpc = new TestNpc("konusucu", Globals.Content.Load<Texture2D>("player"), "npc", new Vector2(100, 150));
 
 
 
-            //GameObjectManager.AddGameObject(_npc/*, _dialogueNpc*/);
+            GameObjectManager.AddGameObject(/*_npc, */_dialogueNpc);
         }
 
         public void InitObjects()
         {
-            //_tree = new Tree(Globals.Content.Load<Texture2D>("tree"), "tree", new Vector2(600, 600));
+            _tree = new Tree(Globals.Content.Load<Texture2D>("tree"), "tree", new Vector2(600, 600));
             _bush = new Bush(Globals.Content.Load<Texture2D>("bush"), "bush", new Vector2(300, 300));
 
             
 
-            GameObjectManager.AddGameObject(/*_tree, */_bush);
+            GameObjectManager.AddGameObject(_tree, _bush);
         }
 
         public void InitEnemies()
