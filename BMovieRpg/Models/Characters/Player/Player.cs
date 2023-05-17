@@ -49,9 +49,14 @@ namespace ProjectRpg.Models.Characters
         {
             InteractionManager.HandleInteractions(this);
 
-            AnimationManager.Update();
+            if (!PlayerInputManager.isDialogueMode) {
+                AnimationManager.Update();
+                Move();
+            }
+            else
+            {
 
-            Move();
+            }
         }
     }
 }

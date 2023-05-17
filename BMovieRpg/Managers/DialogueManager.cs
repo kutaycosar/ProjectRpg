@@ -10,10 +10,10 @@ namespace ProjectRpg.Managers
     {
         private static DialogueUI _dialogueUI;
 
-        //static Dialogue currentPlayerDialogue;
-        //static Dialogue currentNpcDialogue;
+        public static Dialogue currentPlayerDialogue;
+        public static Dialogue currentNpcDialogue;
 
-        //static bool isFirstScreen = true;
+        static bool isFirstScreen = true;
 
         public static List<Dialogue> dialoguesToShow = new();
 
@@ -21,9 +21,14 @@ namespace ProjectRpg.Managers
 
         public static void SetFirstScreen(List<Dialogue> dialogues)
         {
-            dialoguesToShow = dialogues.Where(d => d.Id.EndsWith("1")).ToList();
-            //isFirstScreen = false;
-            //currentNpcDialogue = dialogues.FirstOrDefault(d => d.Id == "N-A-1");
+            dialoguesToShow = dialogues.Where(d => d.Id == "N-A-1" || (d.Id.StartsWith("P-") && d.Id.EndsWith("1"))).ToList();
+            currentNpcDialogue = dialogues.FirstOrDefault(d => d.Id == "N-A-1");
+            isFirstScreen = false;
+        }
+
+        public static void SelectResponse() 
+        { 
+
         }
 
         public static void ManageDialogue()
@@ -45,6 +50,10 @@ namespace ProjectRpg.Managers
             //    currentNpcDialogue = default
             //}
         }
-       
+
+        public static void Update()
+        {
+
+        }
     }
 }

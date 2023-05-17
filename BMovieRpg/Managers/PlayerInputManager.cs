@@ -12,6 +12,8 @@ namespace ProjectRpg
 
         public static KeyboardState preKeyState;
         public static KeyboardState curKeyState;
+
+        public static bool isDialogueMode = false;
         
         public static Direction Direction
         {

@@ -33,9 +33,10 @@ namespace ProjectRpg.Models.Ui
             throw new NotImplementedException();
         }
 
-        public void ToggleActive()
+        public virtual void ToggleActive()
         {
             isActive = !isActive;
+            
         }
     }
 }

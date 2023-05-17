@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
-  <Comment CommentText="isimlendirme yanlis gibi . organizasyonu gozden gecir&#xD;&#xA;">
+  <Comment CommentText="isimlendirme yanlis gibi . organizasyonu gozden gecir&#xD;&#xA;&#xD;&#xA;-mouse clickler icin monogame extended&#xD;&#xA;&#xD;&#xA;">
     <Position X="10.719" Y="7.781" Height="1" Width="1.856" />
   </Comment>
   <Class Name="ProjectRpg.AnimatedSprite" Collapsed="true">
@@ -34,7 +34,7 @@
   <Class Name="ProjectRpg.PlayerInputManager" Collapsed="true">
     <Position X="11.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAgBACAAAAAAAAAQAABAAAAIAAQAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAAgBACAAAAAAAAAQAABAAAAIAAwAAAA=</HashCode>
       <FileName>Managers\PlayerInputManager.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -167,14 +167,14 @@
   <Class Name="ProjectRpg.Managers.DialogueManager" Collapsed="true">
     <Position X="2.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAEAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAEAA=</HashCode>
+      <HashCode>AAQCAAAEAEAAAAAAAAAAAAAAAAAAAABAAAAAAAQAEAA=</HashCode>
       <FileName>Managers\DialogueManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectRpg.Models.Ui.DialogueUI" Collapsed="true">
     <Position X="0.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAEAAACAAAAAAAAAA=</HashCode>
       <FileName>Models\UI\DialogueUI.cs</FileName>
     </TypeIdentifier>
   </Class>
