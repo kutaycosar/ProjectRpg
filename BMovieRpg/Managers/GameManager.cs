@@ -40,6 +40,7 @@ namespace ProjectRpg
 
             PlayerInputManager.Update();
             _player.Update();
+            DialogueManager.Update();
             //_snake.Update();
 
             //_dialogueUi.Update();

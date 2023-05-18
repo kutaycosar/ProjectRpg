@@ -20,23 +20,13 @@ namespace ProjectRpg.Models.Ui
         }
 
         public Vector2 Pos { get { return this.pos; } }
-
-        public bool IsActive { get { return this.isActive; } set { isActive = value; } }
-
-        //public virtual void Update()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public virtual void Activate() { throw new NotImplementedException(); }
+        public virtual void Deactivate() { throw new NotImplementedException(); }
+        public bool IsActive { get { return this.isActive; }}
 
         public virtual void Draw()
         {
             throw new NotImplementedException();
-        }
-
-        public virtual void ToggleActive()
-        {
-            isActive = !isActive;
-            
         }
     }
 }

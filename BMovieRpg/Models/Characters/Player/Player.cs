@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using ProjectRpg.Managers;
 using ProjectRpg.Models.Physics;
+using System;
 
 namespace ProjectRpg.Models.Characters
 {
@@ -52,10 +53,6 @@ namespace ProjectRpg.Models.Characters
             if (!PlayerInputManager.isDialogueMode) {
                 AnimationManager.Update();
                 Move();
-            }
-            else
-            {
-
             }
         }
     }

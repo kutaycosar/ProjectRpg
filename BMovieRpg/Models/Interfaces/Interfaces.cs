@@ -53,10 +53,10 @@ namespace ProjectRpg
         Vector2 Pos { get; }
         int Width { get; }
         int Height { get; }
-        bool IsActive { get; set; }
+        bool IsActive { get;}
 
-        void ToggleActive();
-
+        void Activate();
+        void Deactivate();  
         void Draw();
     }
 

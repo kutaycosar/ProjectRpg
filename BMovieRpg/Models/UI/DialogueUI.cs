@@ -19,10 +19,16 @@ namespace ProjectRpg.Models.Ui
             this.sizeData.Width, this.sizeData.Height);
         }
 
-        public override void ToggleActive()
+        public override void Activate()
         {
-            base.ToggleActive();
-            PlayerInputManager.isDialogueMode = !PlayerInputManager.isDialogueMode;
+            this.isActive = true;
+            PlayerInputManager.isDialogueMode = true;
+        }
+
+        public override void Deactivate()
+        {
+            this.isActive = false;
+            PlayerInputManager.isDialogueMode = false;
         }
 
         public override void Draw()

@@ -25,7 +25,9 @@ namespace ProjectRpg.Managers
                         {
                             if (PlayerInputManager._isFPressed && PlayerInputManager.WasKeyPressed(Keys.F))
                             {
-                                HandleDialogue(callerObj as Player, gObj as Npc);
+                                DialogueManager.DialogueUI.Activate();
+                                Npc npc = gObj as Npc;
+                                DialogueManager.SetFirstScreen(npc);
                             }
                         }
                     }
@@ -41,10 +43,9 @@ namespace ProjectRpg.Managers
             }
         }
 
-        public static void HandleDialogue(Player callerObj, Npc npcObj)
+        public static void HandleDialogue(Player callerObj, Npc npc)
         {
-            DialogueManager.DialogueUI.ToggleActive();
-            DialogueManager.SetFirstScreen(npcObj.Dialogues);
+            DialogueManager.ManageDialogue(npc);
         }
         
     }
