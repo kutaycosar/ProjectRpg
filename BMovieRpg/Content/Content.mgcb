@@ -20,6 +20,12 @@
 /processorParam:TextureFormat=Compressed
 /build:Arial.spritefont
 
+#begin bencesicak.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:bencesicak.mp3
+
 #begin bullet.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -44,6 +50,12 @@
 /processorParam:TextureFormat=Color
 /build:bush.png
 
+#begin coksicak.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:coksicak.mp3
+
 #begin eyeEnemy.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -67,6 +79,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:heart.png
+
+#begin malsatar.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:malsatar.mp3
+
+#begin parmakhizasi.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:parmakhizasi.mp3
 
 #begin player.png
 /importer:TextureImporter
@@ -163,4 +187,10 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:tree.png
+
+#begin vallacivarda.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:vallacivarda.mp3
 

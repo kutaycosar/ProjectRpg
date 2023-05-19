@@ -7,6 +7,7 @@ using static ProjectRpg.Structs.CustomType;
 
 namespace ProjectRpg.Managers
 {
+    //TODO: Do more clean dialogue system 
      public static class DialogueManager
     {
         private static DialogueUI _dialogueUI;
@@ -28,6 +29,10 @@ namespace ProjectRpg.Managers
             currentNpcDialogue = npc.Dialogues.FirstOrDefault(d => d.Id == "N-A-1");
             isFirstScreen = false;
             PlayerInputManager.isDialogueResponseMode = true;
+            if (currentNpcDialogue.SoundEffect != null)
+            {
+                currentNpcDialogue.SoundEffect.Play();
+            }
         }
 
         public static void ManageDialogue(Npc npc)
@@ -46,7 +51,8 @@ namespace ProjectRpg.Managers
                 if (PlayerInputManager.isDialogueResponseMode && PlayerInputManager.isDialogueSelected) 
                 {
                     
-                    Console.WriteLine("in update");
+                    Console.WriteLine(currentNpcDialogue.Text);
+                    
                     Dialogue dialogueToDelete = dialoguesToShow[PlayerInputManager.dialogueKey];
                     dialoguesToShow.Remove(dialogueToDelete);
                     dialoguesToShow.RemoveAll(dialogue => dialogue.Id.StartsWith("N"));
@@ -59,7 +65,12 @@ namespace ProjectRpg.Managers
                         dialoguesToShow.Insert(0, dialogueToAdd);
                         currentNpcDialogue = dialogueToAdd;
                     }
-                    
+
+                    if (currentNpcDialogue.SoundEffect != null)
+                    {
+                        currentNpcDialogue.SoundEffect.Play();
+                    }
+
                     PlayerInputManager.isDialogueSelected = false;
                 }
             }

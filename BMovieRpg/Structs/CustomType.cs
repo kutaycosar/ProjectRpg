@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework.Audio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,19 +14,22 @@ namespace ProjectRpg.Structs
             public string Text;
             public string Id;
             public string ResponseId;
+            public SoundEffect SoundEffect;
 
             public Dialogue(string text, string id, string responseId)
             {
                 Text = text;
                 Id = id;
                 ResponseId = responseId;
+                SoundEffect = null;
             }
 
-            public Dialogue()  // Add this parameterless constructor
+            public Dialogue(string text, string id, string responseId, SoundEffect soundEffect)  // Add this parameterless constructor
             {
-                Text = string.Empty;
-                Id = string.Empty;
-                ResponseId = string.Empty;
+                Text=text;
+                Id = id;
+                ResponseId=responseId;
+                SoundEffect = soundEffect;
             }
         }
 
