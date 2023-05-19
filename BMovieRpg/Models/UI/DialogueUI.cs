@@ -22,13 +22,11 @@ namespace ProjectRpg.Models.Ui
         public override void Activate()
         {
             this.isActive = true;
-            PlayerInputManager.isDialogueMode = true;
         }
 
         public override void Deactivate()
         {
             this.isActive = false;
-            PlayerInputManager.isDialogueMode = false;
         }
 
         public override void Draw()
@@ -45,7 +43,7 @@ namespace ProjectRpg.Models.Ui
 
             foreach (Dialogue dialogue in DialogueManager.dialoguesToShow)
             {
-                string text = dialogue.Id.StartsWith("N") ? dialogue.Text : $"{index} - {dialogue.Text}";
+                string text = dialogue.Id.StartsWith("N") ? dialogue.Text : $"{index} - {dialogue.Text}"; 
 
                 Globals.SpriteBatch.DrawString(Globals.Font, text,
                     new Vector2(boxRect.X + 10, boxRect.Y + offSetY), Color.Black);

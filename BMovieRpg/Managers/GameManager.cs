@@ -37,16 +37,10 @@ namespace ProjectRpg
 
         public void Update(GameTime gameTime)
         {
-
             PlayerInputManager.Update();
             _player.Update();
             DialogueManager.Update();
-            //_snake.Update();
-
-            //_dialogueUi.Update();
-
             Globals.Update(gameTime);
-
         }
         
         public void Draw()

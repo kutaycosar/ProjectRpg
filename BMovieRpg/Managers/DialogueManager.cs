@@ -30,7 +30,6 @@ namespace ProjectRpg.Managers
             PlayerInputManager.isDialogueResponseMode = true;
         }
 
-
         public static void ManageDialogue(Npc npc)
         {
             
@@ -38,13 +37,16 @@ namespace ProjectRpg.Managers
 
         public static void Update()
         {
+            
             if(!isFirstScreen && DialogueUI.IsActive)
             {
-                Console.WriteLine(PlayerInputManager.isDialogueSelected.ToString());
+                Console.WriteLine(PlayerInputManager.isDialogueResponseMode.ToString() + PlayerInputManager.isDialogueSelected.ToString());
                 PlayerInputManager.SetDialogueKey();
 
-                if (PlayerInputManager.isDialogueSelected && PlayerInputManager.isDialogueResponseMode) 
+                if (PlayerInputManager.isDialogueResponseMode && PlayerInputManager.isDialogueSelected) 
                 {
+                    
+                    Console.WriteLine("in update");
                     Dialogue dialogueToDelete = dialoguesToShow[PlayerInputManager.dialogueKey];
                     dialoguesToShow.Remove(dialogueToDelete);
                     dialoguesToShow.RemoveAll(dialogue => dialogue.Id.StartsWith("N"));
@@ -52,15 +54,13 @@ namespace ProjectRpg.Managers
                     Dialogue dialogueToAdd = allDialogues.FirstOrDefault(d => d.Id == dialogueToDelete.ResponseId);
 
                     // Add the dialogue to dialoguesToShow if it exists
+                    if(dialogueToAdd.Text != null)
+                    {
+                        dialoguesToShow.Insert(0, dialogueToAdd);
+                        currentNpcDialogue = dialogueToAdd;
+                    }
                     
-                    dialoguesToShow.Insert(0,dialogueToAdd);
-                    currentNpcDialogue = dialogueToAdd;
-                    
-
-
                     PlayerInputManager.isDialogueSelected = false;
-                    PlayerInputManager.isDialogueResponseMode = false;
-
                 }
             }
         }

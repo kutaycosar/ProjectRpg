@@ -20,6 +20,13 @@ namespace ProjectRpg.Structs
                 Id = id;
                 ResponseId = responseId;
             }
+
+            public Dialogue()  // Add this parameterless constructor
+            {
+                Text = string.Empty;
+                Id = string.Empty;
+                ResponseId = string.Empty;
+            }
         }
 
     }

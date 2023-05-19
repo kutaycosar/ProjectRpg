@@ -50,7 +50,7 @@ namespace ProjectRpg.Models.Characters
         {
             InteractionManager.HandleInteractions(this);
 
-            if (!PlayerInputManager.isDialogueMode) {
+            if (!DialogueManager.DialogueUI.IsActive) {
                 AnimationManager.Update();
                 Move();
             }

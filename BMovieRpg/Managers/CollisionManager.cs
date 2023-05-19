@@ -10,6 +10,7 @@ namespace ProjectRpg.Managers
     {
         public static void HandleInteractions(GameObject callerObj)
         {
+            
             foreach(GameObject gObj in GameObjectManager.GetGameObjects())
             {
                 if(gObj != callerObj)//belki ikisi de ayni obje olur boyle cast yap
@@ -29,6 +30,7 @@ namespace ProjectRpg.Managers
                                 Npc npc = gObj as Npc;
                                 DialogueManager.SetFirstScreen(npc);
                             }
+                            
                         }
                     }
                 }
