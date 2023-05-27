@@ -33,6 +33,7 @@ namespace ProjectRpg.Managers
             {
                 currentNpcDialogue.SoundEffect.Play();
             }
+            //
         }
 
         public static void ManageDialogue(Npc npc)
